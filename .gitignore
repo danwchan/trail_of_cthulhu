@@ -1,0 +1,11 @@
+# Hidden and temporary files #
+##############################
+.directory
+.Rhistory
+.Makefile*
+
+
+# Too big anyways #
+###################
+/the_background
+/Trail_of_Cthulu_materials
