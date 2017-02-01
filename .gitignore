@@ -3,6 +3,7 @@
 .directory
 .Rhistory
 .Makefile*
+*~
 
 
 # Too big anyways #
