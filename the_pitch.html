@@ -7,13 +7,8 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia Sans Libre">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="custom_mods.css">
 <style>
-
-body,h1,h2,h3,h4,h5,h6 {font-family: "Averia Sans Libre", "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    line-height: 1.8;
-}
 
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
@@ -25,19 +20,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('the_background/regio_tall.jpg');
+    background-image: url("the_background/regio_tall2.png");
     min-height: 100%;
 }
 
-/* Second image (Game) */
+/* Second image (Contact) */
 .bgimg-2 {
-    background-image: url("the_background/jupiters_eye/jupiters_eye2.png");
-    min-height: : 100%;
+    background-image: url("the_background/city_tentacles/toronto_dread2.png");
+    min-height: 400px;
 }
 
-/* Third image (Contact) */
+/* Third image (Game) */
 .bgimg-3 {
-    background-image: url("the_background/city_tentacles/toronto_dread2.png");
+    background-image: url("the_background/jupiters_eye/jupiters_eye2.png");
     min-height: 400px;
 }
 
@@ -68,7 +63,11 @@ body, html {
   </li>
   <li class="w3-hide-small"><a href="#story" class="w3-padding-large">G</a></li>
   <li class="w3-hide-small"><a href="#contact" class="w3-padding-large">GET INVOLVED</a></li>
-  <li class="w3-hide-small w3-right"><a href="javascript:void(0)" class="w3-padding-large w3-hover-red"><i class="fa fa-search"></i></a></li>
+  <li class="w3-hide-medium w3-hide-small w3-right w3-padding-large"> 
+    <audio controls autoplay>
+      <source src="Trail_of_Cthulu_materials/Trail_EP/Purist_Trail_of_Cthulhu_Theme.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+    </audio>
+  </li>
 </ul>
 </div>
 
@@ -83,9 +82,15 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
+<div class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-middle" style="white-space:pre;">
+    <div class="w3-align-left w3-padding-large introtext">
+      <span class="t1 animate">There will be puzzles </span><span class="animate t2">and there will be cunning.</span>
+      <span class="animate t3">There will be tragedy </span><span class="animate t4">and there will be heroics.</span>
+      <span class="animate t5">There will be mystery </span><span class="animate t6">and there will be insight.</span>
+      <span class="animate t7">Collect the clues and unravel the horror: </span><span class="animate t8">in the end</span><span class="sanimate t9"> nothing</span><span class="sanimate t10"> will</span><span class="sanimate t11"> save</span><span class="sanimate t12"> you.</span>
+      <span class="sanimate t13">Return to reality with only the memories of your meaningful acts.</span>
+    </div>
   </div>
 </div>
 
@@ -108,7 +113,39 @@ body, html {
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MY WORK</h3>
+  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
+</div>
+
+<!-- Fourth Parallax Image with Portfolio Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MY WORK</h3>
+  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
 
 </body>
 </html>

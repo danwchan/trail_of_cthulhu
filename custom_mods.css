@@ -1,0 +1,51 @@
+body, html {
+    height: 100%;
+}
+body,h1,h2,h3,h4,h5,h6 {
+	font-family: "Averia Sans Libre", "Lato", sans-serif;
+	}
+body
+.introtext {
+    font-weight: bold;}
+@media (max-width:549px){.introtext {font-size:9px;}}
+@media (min-width:800px) and (max-width:999px){.introtext {font-size:24px;}}
+@media (min-width:1000px){.introtext {font-size:30px;}}
+.animate {
+	opacity:0;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-animation-name: opac;
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: 1;
+	animation-fill-mode:forwards;
+	animation-name:opac;
+	animation-timing-function: ease-out;
+	animation-duration: 1.5s;
+	animation-iteration-count: 1;
+	}
+.sanimate {
+	opacity:0;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-animation-name: opac;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 7s;
+	animation-fill-mode:forwards;
+	animation-name:opac;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-duration: 7s;
+	}
+.t1{-webkit-animation-delay: 0.5s;animation-delay: 0.5s}
+.t2{-webkit-animation-delay: 1.3s;animation-delay: 1.3s}
+.t3{-webkit-animation-delay: 3.3s;animation-delay: 3.3s}
+.t4{-webkit-animation-delay: 4.1s;animation-delay: 4.1s}
+.t5{-webkit-animation-delay: 6.1s;animation-delay: 6.1s}
+.t6{-webkit-animation-delay: 6.9s;animation-delay: 6.9s}
+.t7{-webkit-animation-delay: 8.9s;animation-delay: 8.9s}
+.t8{-webkit-animation-delay: 10.9s;animation-delay: 10.9s}
+.t9{-webkit-animation-delay: 11.9s;animation-delay: 11.9s}
+.t10{-webkit-animation-delay: 10s;animation-delay: 10s}
+.t11{-webkit-animation-delay: 12s;animation-delay: 12s}
+.t12{-webkit-animation-delay: 13s;animation-delay: 13s}
+.t13{-webkit-animation-delay: 14s;animation-delay: 14s}
