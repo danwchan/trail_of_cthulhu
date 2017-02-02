@@ -1,15 +1,23 @@
 body, html {
     height: 100%;
+    line-height: 2;
 }
-body,h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide {
 	font-family: "Averia Sans Libre", "Lato", sans-serif;
 	}
 body
+a {
+   text-decoration: none;
+   font-family: "Averia Sans Libre", "Lato", sans-serif;}
+.w3-sans{font-family:"Segoe UI",Arial,sans-serif}
 .introtext {
-    font-weight: bold;}
+    font-weight: bold;
+    font-family: "Averia Sans Libre", "Lato", sans-serif;}
 @media (max-width:549px){.introtext {font-size:9px;}}
 @media (min-width:800px) and (max-width:999px){.introtext {font-size:24px;}}
 @media (min-width:1000px){.introtext {font-size:30px;}}
+.w3-deepred,.w3-hover-deepred:hover{color:#fff!important;background-color:#b70000!important}
+.w3-text-deepred,.w3-hover-text-deepred:hover{color:#b70000!important}
 .animate {
 	opacity:0;
 	-webkit-animation-fill-mode:forwards;
@@ -43,9 +51,9 @@ body
 .t5{-webkit-animation-delay: 6.1s;animation-delay: 6.1s}
 .t6{-webkit-animation-delay: 6.9s;animation-delay: 6.9s}
 .t7{-webkit-animation-delay: 8.9s;animation-delay: 8.9s}
-.t8{-webkit-animation-delay: 10.9s;animation-delay: 10.9s}
-.t9{-webkit-animation-delay: 11.9s;animation-delay: 11.9s}
+.t8{-webkit-animation-delay: 9.7s;animation-delay: 9.7s}
+.t9{-webkit-animation-delay: 11.7s;animation-delay: 11.7s}
 .t10{-webkit-animation-delay: 10s;animation-delay: 10s}
-.t11{-webkit-animation-delay: 12s;animation-delay: 12s}
+.t11{-webkit-animation-delay: 11s;animation-delay: 11s}
 .t12{-webkit-animation-delay: 13s;animation-delay: 13s}
 .t13{-webkit-animation-delay: 14s;animation-delay: 14s}

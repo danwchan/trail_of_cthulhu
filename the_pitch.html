@@ -27,23 +27,30 @@
 /* Second image (Contact) */
 .bgimg-2 {
     background-image: url("the_background/city_tentacles/toronto_dread2.png");
-    min-height: 400px;
+    min-height: 60%;
 }
 
 /* Third image (Game) */
 .bgimg-3 {
     background-image: url("the_background/jupiters_eye/jupiters_eye2.png");
-    min-height: 400px;
+    min-height: 60%;
 }
 
 /* Fourth image (Contact) */
 .bgimg-4 {
     background-image: url("the_background/shoggoth/chosen/closeup_painting2.png");
+    min-height: 60%;
+}
+/* Fifth image (Contact) */
+.bgimg-5 {
+    background-image: url("the_background/footer/tentacle_field.svg");
+    min-width: 100%;
     min-height: 400px;
 }
 
 </style>
 <body>
+
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -51,21 +58,22 @@
   <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
     <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
   </li>
-  <li><a href="#intro" class="w3-hover-none w3-hover-text-grey w3-padding-large">INTRO</a></li>
-  <li class="w3-hide-small"><a href="#keeper" class="w3-padding-large">KEEPER</a></li>
+  <li class="w3-hide-small"><a href="#about" class="w3-padding-large">ABOUT</a></li>
+  <li class="w3-hide-small"><a href="#game" class="w3-padding-large">GAME</a></li>
+  <li class="w3-hide-small"><a href="#story" class="w3-padding-large">STORY</a></li>
+  <li class=><a href="#contact" class="w3-padding-large">PLAY</a></li>
   <li class="w3-hide-small w3-dropdown-hover">
-  <li class="w3-hide-small"><a href="#story" class="w3-padding-large">INVESTIGATORS</a></li>
+    <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More">Details <i class="fa fa-caret-down"></i></a>     
     <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="#format">FORMAT</a>
-      <a href="#frame">FRAME</a>
-      <a href="#story">STORY SO FAR</a>
+      <a href="#">GAME</a>
+      <a href="#">STORY</a>
+      <a href="#">PARTICIPANTS</a>
     </div>
   </li>
-  <li class="w3-hide-small"><a href="#story" class="w3-padding-large">G</a></li>
-  <li class="w3-hide-small"><a href="#contact" class="w3-padding-large">GET INVOLVED</a></li>
+<!-- some day I'd like this to be visible no matter what in some sort of drop down menu perhaps -->
   <li class="w3-hide-medium w3-hide-small w3-right w3-padding-large"> 
     <audio controls autoplay>
-      <source src="Trail_of_Cthulu_materials/Trail_EP/Purist_Trail_of_Cthulhu_Theme.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+      <source src="Trail_of_Cthulu_materials/Trail_EP/Purist_Trail_of_Cthulhu_Theme2.mp3" type="audio/mpeg"> Your browser does not support the audio element.
     </audio>
   </li>
 </ul>
@@ -74,10 +82,10 @@
 <!-- Navbar on small screens -->
 <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
   <ul class="w3-navbar w3-left-align w3-black">
-    <li><a class="w3-padding-large" href="#band">BAND</a></li>
-    <li><a class="w3-padding-large" href="#tour">TOUR</a></li>
-    <li><a class="w3-padding-large" href="#contact">CONTACT</a></li>
-    <li><a class="w3-padding-large" href="#">MERCH</a></li>
+    <li><a class="w3-padding-medium" href="#about">ABOUT</a></li>
+    <li><a class="w3-padding-medium" href="#game">GAME DETAILS</a></li>
+    <li><a class="w3-padding-medium" href="#story">STORY DETAILS</a></li>
+    <li><a class="w3-padding-medium" href="#">PARTICIPANTS</a></li>
   </ul>
 </div>
 
@@ -88,7 +96,7 @@
       <span class="t1 animate">There will be puzzles </span><span class="animate t2">and there will be cunning.</span>
       <span class="animate t3">There will be tragedy </span><span class="animate t4">and there will be heroics.</span>
       <span class="animate t5">There will be mystery </span><span class="animate t6">and there will be insight.</span>
-      <span class="animate t7">Collect the clues and unravel the horror: </span><span class="animate t8">in the end</span><span class="sanimate t9"> nothing</span><span class="sanimate t10"> will</span><span class="sanimate t11"> save</span><span class="sanimate t12"> you.</span>
+      <span class="animate t7">Collect the clues and unravel the horror: </span><span class="sanimate t8">in the end</span><span class="sanimate t9"> nothing</span><span class="sanimate t10"> will</span><span class="sanimate t11"> save</span><span class="sanimate t12"> you.</span>
       <span class="sanimate t13">Return to reality with only the memories of your meaningful acts.</span>
     </div>
   </div>
@@ -96,22 +104,26 @@
 
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I love photography</em></p>
+  <h1 class="w3-center">Welcome</h1>
+  <div class="w3-panel w3-light-grey w3-leftbar">
+    <p><i class="w3-serif w3-xlarge">That is not dead that can eternal lie/ And with strange aeons even death may die</i></p>
+    <p class="w3-sans">H.P. Lovecraft</p>
+  </div> 
+  <p class="w3-center">In Kenneth Hite's introduction to the Trail of Cthulhu Core Rulebook opens with a reason why this game exists: to take the "cosmic despair of the greatest horror writer of the 20th century</p>
   <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
     qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="game">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+    <h1 class="w3-xxxlarge w3-text-light-grey w3-wide">This Game</h1>
   </div>
 </div>
 
 <!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
+<div class="w3-content w3-container w3-padding-64">
   <h3 class="w3-center">MY WORK</h3>
   <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
@@ -119,33 +131,77 @@
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="story">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+    <span class="w3-xxxlarge w3-text-light-grey w3-wide">Our Story</span>
   </div>
 </div>
 
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
-</div>
+<!-- Portfolio Section -->
+<div class="w3-content w3-container w3-padding-64">
+  <h2>Active Accordions</h2>
+  <p>In this example we add the w3-red class to an active accordion (when the button is clicked on and the content is opened).</p>
 
-<!-- Fourth Parallax Image with Portfolio Text -->
-<div class="bgimg-4 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+  <div class="w3-accordion w3-light-grey">
+    <button onclick="myAccordian('Demo1')" class="w3-btn-block w3-left-align">Open Section 1</button>
+    <div id="Demo1" class="w3-accordion-content w3-container">
+        <p>Some text..</p>
+    </div>
+    <button onclick="myAccordian('Demo2')" class="w3-btn-block w3-left-align">Open Section 2</button>
+    <div id="Demo2" class="w3-accordion-content w3-container">
+        <p>Some other text..</p>
+    </div>
   </div>
 </div>
 
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
+
+<!-- Fourth Parallax Image with contact section Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min" id="contact">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-xxxlarge w3-text-light-grey w3-wide">Let's play!</span>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-content w3-container w3-padding-64">
+  <h1 class="w3-center">Join a game</h1>
+  <div class="w3-panel w3-grey w3-leftbar w3-border-black">
+    <p>If your very fiber is screaming out to play contact me right now by <a class="w3-hover-text-deepred" href="mailto:mythos.acts@gmail.com?Subject=mythos" target="_top">email</a> with mythos in the subject line to schedule your game!
+  </div>
+  <p> I will try to respond as soon as possible to begin the process of creating a character.
+</div>
+
+<!-- footer -->
+<div class="bgimg-5 w3-display-container">
+  <div class="w3-display-middle w3-padding-0" id="poem">
+    <p class="w3-center w3-hover-text-grey"><a href="https://www.poetryfoundation.org/poems-and-poets/poems/detail/47536">Then practice losing farther, losing faster: <br> places, and names, and where it was you meant <br> to travel. None of these will bring disaster." <br> -Elizabeth Bishop</a></p>
+  </div>
+</div>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button, want to make this an accordian someday
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+//used to expand the accordian and hilight the box
+function myAccordian(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-deepred";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-deepred", "");
+    }
+}
+</script>
 
 </body>
 </html>
