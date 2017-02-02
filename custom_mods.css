@@ -5,10 +5,8 @@ body, html {
 h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide {
 	font-family: "Averia Sans Libre", "Lato", sans-serif;
 	}
-body
-a {
-   text-decoration: none;
-   font-family: "Averia Sans Libre", "Lato", sans-serif;}
+p { text-indent: 5%}
+a {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#b70000;}
 .w3-sans{font-family:"Segoe UI",Arial,sans-serif}
 .introtext {
     font-weight: bold;
