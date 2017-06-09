@@ -5,15 +5,16 @@ body, html {
 h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide {
 	font-family: "Averia Sans Libre", "Lato", sans-serif;
 	}
-p { text-indent: 5%}
+p {text-indent: 5%}
 a {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#b70000;}
 .w3-sans{font-family:"Segoe UI",Arial,sans-serif}
 .introtext {
+	 text-indent: 0px;
     font-weight: bold;
     font-family: "Averia Sans Libre", "Lato", sans-serif;}
 @media (max-width:549px){.introtext {font-size:9px;}}
-@media (min-width:800px) and (max-width:999px){.introtext {font-size:24px;}}
-@media (min-width:1000px){.introtext {font-size:30px;}}
+@media (min-width:850px) and (max-width:1049px){.introtext {font-size:24px;}}
+@media (min-width:1050px){.introtext {font-size:30px;}}
 .w3-deepred,.w3-hover-deepred:hover{color:#fff!important;background-color:#b70000!important}
 .w3-text-deepred,.w3-hover-text-deepred:hover{color:#b70000!important}
 .animate {
@@ -55,3 +56,17 @@ a {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#b70000;}
 .t11{-webkit-animation-delay: 11s;animation-delay: 11s}
 .t12{-webkit-animation-delay: 13s;animation-delay: 13s}
 .t13{-webkit-animation-delay: 14s;animation-delay: 14s}
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

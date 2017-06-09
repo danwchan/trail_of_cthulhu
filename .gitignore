@@ -3,6 +3,8 @@
 .directory
 .Rhistory
 .Makefile*
+.bash*
+.profile
 *~
 
 
@@ -10,3 +12,5 @@
 ###################
 /the_background
 /Trail_of_Cthulu_materials
+/images
+/sounds
