@@ -1,3 +1,7 @@
+# Secrets #
+###########
+abomination.py
+
 # Hidden and temporary files #
 ##############################
 .directory
@@ -6,11 +10,12 @@
 .bash*
 .profile
 *~
-
+*.pyc
+*.lock
 
 # Too big anyways #
 ###################
 /the_background
-/Trail_of_Cthulu_materials
+/Trail_of_Cthulhu_materials
 /images
 /sounds
