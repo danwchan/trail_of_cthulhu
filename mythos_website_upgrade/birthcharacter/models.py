@@ -51,7 +51,8 @@ class DriveExamples(RevisionStatus):
         default = 'unassigned_example',
         on_delete = models.SET_DEFAULT,
     )
-    example_quote = models.TextField('a quote from a novel which exemplifies the drive')
+    example_quote = models.TextField('a quote from media which exemplifies the drive')
+    example_title = models.TextField('title of the media')
     example_character = models.CharField('a character who exemplifies the drive', max_length=50)
     MEDIA_TYPE_CHOICES = (
         ('C', 'cinema'),
@@ -129,10 +130,6 @@ class AssociatedOccuAbil(RevisionStatus):
         blank = True)
     #for example conditional_options may restrict occupational abilities to a sub class of occupation, or they may specifiy choosing from a pool which should be represented as choose X from a pool of Y: X, logic for implementing the choices will have to reside in the character selection validation
     ability_options = models.IntegerField('this association is for a choice from several options, choose X',
-        blank = True,
-        null = True
-    )
-    options_pool = models.IntegerField('this association is for a choice from several options, from Y',
         blank = True,
         null = True
     )
