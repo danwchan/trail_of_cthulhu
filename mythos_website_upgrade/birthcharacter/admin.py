@@ -9,15 +9,34 @@ from .models import AbilityList, AbilityExamples, OccupationList, DriveList, Dri
 #    ]
 
 # Inline projects to build the editing forms
-class AbilityInLine(admin.TabularInline):
+class AbilityInLine(admin.StackedInline):
     model = AssociatedOccuAbil
     fk_name = 'associated_occupations'
+    extra = 0
+
+class OccuInLine(admin.StackedInline):
+    model = AssociatedOccuDrive
+    fk_name = 'drive'
+    extra = 0
+
+class AbilityExInLine(admin.StackedInline):
+    model = AbilityExamples
+    fk_name = 'ability'
+    extra = 0
+
+class DriveExInLine(admin.StackedInline):
+    model = DriveExamples
+    fk_name = 'drive'
     extra = 0
 
 # ModelAdmin classes to bind it all together representing editing forms
 
 class AbilityAdmin(admin.ModelAdmin):
     list_display = ['ability', 'purist', 'pulp', 'rating']
+    search_fields = ['abilitylist__ability']
+    inlines = [
+        AbilityExInLine
+    ]    
     
 class OccupationAdmin(admin.ModelAdmin):
     list_display = ['occupation', 'purist', 'pulp', 'rating']
@@ -27,23 +46,23 @@ class OccupationAdmin(admin.ModelAdmin):
     ]
     
     def _abilitylist(self, obj):
-        return obj.abilitylist.all().count()
+        return obj.abilitylist.all().count() #just copied this over... I don't know what it does :P
 
 class DriveAdmin(admin.ModelAdmin):
     list_display = ['drive', 'purist', 'pulp', 'rating']
-
-class AbilityExAdmin(admin.ModelAdmin):
-    list_display = ['get_ability', 'purist', 'pulp', 'rating']
-    
-    def get_ability(self, obj):
-        return obj.abilitylist.ability
-    get_ability.short_description = 'Ability'
+    search_fields = ['abilitylist__ability']
+    inlines = [
+        DriveExInLine,
+        OccuInLine
+    ]
 
 # Register your models here.
 
 admin.site.register(AbilityList, AbilityAdmin)
-admin.site.register(AbilityExamples, AbilityExAdmin)
 admin.site.register(OccupationList, OccupationAdmin)
-admin.site.register(SpecialList)
 admin.site.register(DriveList, DriveAdmin)
-admin.site.register(DriveExamples)
+
+#TO BUILD
+#overview page to see which records are old/poorly perofrming
+#formatting to make it prettier
+#expand drive examples to all entries and formalize the media source idea
