@@ -71,12 +71,13 @@ class AbilityList(RevisionStatus):
     INVESTIGATIVE_TYPE_CHOICES = (
         ('A', 'Academic ability'),
         ('I', 'Interpersonal abilty'),
-        ('T', 'Technical ability')
+        ('T', 'Technical ability'),
+        ('D', 'Doubles as an investigative ability')
     )
     investigative_type = models.CharField(
         max_length =1,
         choices = INVESTIGATIVE_TYPE_CHOICES,
-        null = True
+        blank = True
     )
     description = models.TextField()
     
@@ -118,8 +119,13 @@ class AssociatedOccuAbil(RevisionStatus):
         max_length = 75,
         blank = True)
     #for example conditional_options may restrict occupational abilities to a sub class of occupation, or they may specifiy choosing from a pool which should be represented as choose X from a pool of Y: X
-    ability_options = models.IntegerField('this association is for a choice from several options',
-        default = False
+    ability_options = models.IntegerField('this association is for a choice from several options, choose X',
+        blank = True,
+        null = True
+    )
+    options_pool = models.IntegerField('this association is for a choice from several options, from Y',
+        blank = True,
+        null = True
     )
 
 class BirthForm(models.Model):
