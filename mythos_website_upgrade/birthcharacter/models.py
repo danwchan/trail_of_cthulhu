@@ -4,7 +4,7 @@ from randomslugfield import RandomSlugField
 class RevisionStatus(models.Model):
     created = models.DateTimeField('the date this record was created',auto_now=True)
     updated = models.DateTimeField('the last point this record was updated',auto_now_add=True)
-    original = models.BooleanField('TRUE: this record from the Trail of Cthulhu FALSE: it been reworked for the new modern day setting')
+    original = models.BooleanField('this record is directly from the Trail of Cthulhu, needs rewite')
     comments = models.TextField('comments which have been associated with this record',
         blank = True)
     RATING_CHOICES = (
@@ -14,18 +14,21 @@ class RevisionStatus(models.Model):
         (4, 'some concerns'),
         (5, 'might be broken')
     )
-    rating = models.IntegerField('a rating number where 1 is the best and 5 requires a rewite',default=3)
-    purist = models.BooleanField('relevant for purist settings')
-    pulp = models.BooleanField('relevant for pulp settings')
+    rating = models.IntegerField('1: works well, \n 5: needs rewite',default=3)
+    purist = models.BooleanField()
+    pulp = models.BooleanField()
     
-    def __str__(self):
-        return str(self.pk)    
+ #   def __str__(self):
+ #       return str(self.)    
 
 class OccupationList(RevisionStatus):
-    occupation = models.CharField('the name of the occupation',max_length=50, primary_key=True)
+    occupation = models.CharField('name',max_length=50, primary_key=True)
     credit_lower = models.IntegerField('the lower limit of the credit rating')
     credit_upper = models.IntegerField('the upper limit of the credit rating')
     description = models.TextField('what is this occupation?')
+
+    def __str__(self):
+        return self.occupation    
     
 class SpecialList(RevisionStatus):
     occupation = models.ForeignKey(
@@ -36,8 +39,11 @@ class SpecialList(RevisionStatus):
     special = models.TextField('the special benefits rendered onto a character of this occupation')
 
 class DriveList(RevisionStatus):
-    drive = models.CharField('the name of the drive',max_length=25, primary_key=True)
+    drive = models.CharField('name',max_length=25, primary_key=True)
     description = models.TextField()
+    
+    def __str__(self):
+        return self.drive
 
 class DriveExamples(RevisionStatus):
     drive = models.ForeignKey(
@@ -81,6 +87,9 @@ class AbilityList(RevisionStatus):
     )
     description = models.TextField()
     
+    def __str__(self):
+        return self.ability
+    
 class AbilityExamples(RevisionStatus):
     ability = models.ForeignKey(
         AbilityList,
@@ -118,7 +127,7 @@ class AssociatedOccuAbil(RevisionStatus):
     conditional_options = models.CharField('any restrictions or modifiers',
         max_length = 75,
         blank = True)
-    #for example conditional_options may restrict occupational abilities to a sub class of occupation, or they may specifiy choosing from a pool which should be represented as choose X from a pool of Y: X
+    #for example conditional_options may restrict occupational abilities to a sub class of occupation, or they may specifiy choosing from a pool which should be represented as choose X from a pool of Y: X, logic for implementing the choices will have to reside in the character selection validation
     ability_options = models.IntegerField('this association is for a choice from several options, choose X',
         blank = True,
         null = True
