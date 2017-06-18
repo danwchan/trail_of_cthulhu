@@ -75,7 +75,8 @@ class AbilityList(RevisionStatus):
     )
     investigative_type = models.CharField(
         max_length =1,
-        choices = INVESTIGATIVE_TYPE_CHOICES
+        choices = INVESTIGATIVE_TYPE_CHOICES,
+        null = True
     )
     description = models.TextField()
     
