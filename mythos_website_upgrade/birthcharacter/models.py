@@ -1,6 +1,4 @@
 from django.db import models
-from characterbirther import BirthForm
-
 
 #RevisionStatus is the first model which is used as the multi table parent for all the database models which hold the character generation "rules"
 class RevisionStatus(models.Model):
@@ -138,23 +136,3 @@ class AssociatedOccuAbil(RevisionStatus):
         null = True
     )
 #this ends the secion which contains the character generation rules "tables"
-
-#SanityPillars model is responsible for holding the created players pillars of sanity
-class SanityPillars(RevisionStatus):
-    investigators = models.ForeignKey(
-        BirthForm,
-        on_delete = models.PROTECT
-    )
-    pillar = models.CharField('pillar of sanity',max_length=30)
-    description = models.TextField('a short description of this pillar of sanity')
-    
-#StabilitySources model is responsible for holdng the created players sources of stability, could this area be expanded a little to involve these as more stable NPCs?
-class StabilitySources(RevisionStatus):
-    investigators = models.ForeignKey(
-        Birthform,
-        on_delete = models.PROTECT
-    )
-    name = models.CharField('the Name of this source of stability', max_length = 50)
-    residence = models.CharField('where this source lives', max_length = 50)
-    relation = models.CharField('the relationship between the investigator and this source of stability', max_length = 50)
-    personality = models.TextField('a short description of the personality of this character')
