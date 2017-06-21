@@ -1,6 +1,8 @@
 from django.db import models
 from randomslugfield import RandomSlugField
 
+
+#RevisionStatus is the first model which is used as the multi table parent for all the database models which hold the character generation "rules"
 class RevisionStatus(models.Model):
     created = models.DateTimeField('the date this record was created',auto_now=True)
     updated = models.DateTimeField('the last point this record was updated',auto_now_add=True)
@@ -21,6 +23,7 @@ class RevisionStatus(models.Model):
  #   def __str__(self):
  #       return str(self.)    
 
+#this begins the section with models containing the character generation rules. it contains OccupationList, DriveList, SpecialList, DriveExamples, AbilityList, AbilityExamples, AssociatedOccuAbil, AssociatedOccuDrive
 class OccupationList(RevisionStatus):
     occupation = models.CharField('name',max_length=50, primary_key=True)
     credit_lower = models.IntegerField('the lower limit of the credit rating')
@@ -52,7 +55,7 @@ class DriveExamples(RevisionStatus):
         on_delete = models.SET_DEFAULT,
     )
     example_quote = models.TextField('a quote from media which exemplifies the drive')
-    example_title = models.TextField('title of the media')
+    example_title = models.CharField('title of the media', max_length=50)
     example_character = models.CharField('a character who exemplifies the drive', max_length=50)
     MEDIA_TYPE_CHOICES = (
         ('C', 'cinema'),
@@ -97,6 +100,7 @@ class AbilityExamples(RevisionStatus):
         default = 'unassigned_example',
         on_delete = models.SET_DEFAULT,
     )
+    general = models.BooleanField('this example is for a general ability')
     examples = models.TextField('examples of how an ability is used to advance the story')
 
 
@@ -133,6 +137,4 @@ class AssociatedOccuAbil(RevisionStatus):
         blank = True,
         null = True
     )
-
-class BirthForm(models.Model):
-    birthcode = RandomSlugField(length=7)
+#this ends the secion which contains the character generation rules "tables"
