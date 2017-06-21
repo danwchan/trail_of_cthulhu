@@ -4,7 +4,7 @@ from django.db import models
 class RevisionStatus(models.Model):
     created = models.DateTimeField('the date this record was created',auto_now=True)
     updated = models.DateTimeField('the last point this record was updated',auto_now_add=True)
-    original = models.BooleanField('this record is directly from the Trail of Cthulhu, needs rewite')
+    revised = models.BooleanField('revised by the Keeper')
     comments = models.TextField('comments which have been associated with this record',
         blank = True)
     RATING_CHOICES = (
