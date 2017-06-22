@@ -12,6 +12,7 @@ abomination.py
 *~
 *.pyc
 *.lock
+*.kate-swp
 
 # Too big anyways #
 ###################
