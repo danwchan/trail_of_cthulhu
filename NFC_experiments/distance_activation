@@ -1,0 +1,8 @@
+#tag types
+id, number, length (mm), width (mm), bytes, format
+1, X001521JRL, 44, 20, 888, NTAG216
+2, X000T7QJPP, 12, 19, , NTAG203
+3, X00PZBVGD, 25, null, , NTAG203
+
+#experiments
+id, type (id), replicate, distance
