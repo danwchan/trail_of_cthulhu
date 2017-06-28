@@ -1,6 +1,11 @@
 from django.conf.urls import url
-from . import views
+from django.conf.urls.static import static
 
-urlpatterns = [
-    url(r'^$', views.make_investigator, name='make_investigator'),
-]
+from django.conf import settings
+
+from .views import CharacterOptionsView, Occupations
+
+urlpatterns = [  
+    url(r'^.*1$', CharacterOptionsView.as_view(), name='make_investigator'),
+    url(r'^.*2$', Occupations.as_view(), name='make_investigator'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

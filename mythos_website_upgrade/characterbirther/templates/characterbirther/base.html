@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf" />
+<title>{% block title %}This is the title of the page{% endblock title%}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia Sans Libre">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static "custom_mods.css" %}">
+</head>
+
+<style>
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url("{% static "images/regio_tall2.png" %}");
+    min-height: 100%;
+}
+
+/* Second image (Contact) */
+.bgimg-2 {
+    background-image: url("{% static "images/toronto_dread2.png" %}");
+    min-height: 60%;
+}
+
+/* Third image (Game) */
+.bgimg-3 {
+    background-image: url("{% static "images/jupiters_eye2.png" %}");
+    min-height: 60%;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 {
+    background-image: url("{% static "images/closeup_painting2.png" %}");
+    min-height: 60%;
+}
+/* Fifth image (Footer tentacles) */
+.bgimg-5 {
+    background-image: url("{% static "images/tentacle_field.svg" %}");
+    min-width: 100%;
+    min-height: 400px;
+}
+</style>
+
+<!-- Navbar -->
+<div class="w3-top">
+{% block topnav %}
+<ul class="w3-navbar w3-black w3-card-2 w3-left-align">
+  <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+    <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </li>
+  <li class="w3-hide-small"><a href="#about" class="w3-padding-large">ABOUT</a></li>
+  <li class="w3-hide-small"><a href="#game" class="w3-padding-large">GAME</a></li>
+  <li class="w3-hide-small"><a href="#story" class="w3-padding-large">STORY</a></li>
+  <li class=><a href="#contact" class="w3-padding-large">PLAY</a></li>
+  <li class="w3-hide-small w3-dropdown-hover">
+    <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More">Details <i class="fa fa-caret-down"></i></a>     
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#game">GAME</a>
+      <a href="#story">STORY</a>
+      <a href="#">PARTICIPANTS</a>
+    </div>
+  </li>
+<!-- some day I'd like this to be visible no matter what in some sort of drop down menu perhaps -->
+  <li class="w3-hide-medium w3-hide-small w3-right w3-padding-large"> 
+    <audio controls autoplay>
+      <source src="sounds/Purist_Trail_of_Cthulhu_Theme2.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+    </audio>
+  </li>
+</ul>
+{% endblock topnav %}
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+{% block smalltopnav %}
+  <ul class="w3-navbar w3-left-align w3-black">
+    <li><a class="w3-padding-medium" href="#about">ABOUT</a></li>
+    <li><a class="w3-padding-medium" href="#game">GAME DETAILS</a></li>
+    <li><a class="w3-padding-medium" href="#story">STORY DETAILS</a></li>
+    <li><a class="w3-padding-medium" href="#">PARTICIPANTS</a></li>
+  </ul>
+{% endblock smalltopnav %}
+</div>
+
+
+{% block activetext%} <p>Hello, I am the active text block. Fill me with things that will be major</p> {% endblock %}
+
+<!-- footer -->
+
+<div class="bgimg-5 w3-display-container">
+{% block footer%}
+  <div class="w3-display-middle w3-padding-0" id="poem">
+    <p class="w3-center"><a href="https://www.poetryfoundation.org/poems-and-poets/poems/detail/47536" style="text-decoration:none">Then practice losing farther, losing faster: <br> places, and names, and where it was you meant <br> to travel. None of these will bring disaster." <br> -Elizabeth Bishop</a></p>
+  </div>
+  <div class="w3-display-bottomright w3-container w3-right-align w3-tiny" style="line-height:1" id="copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">meaningful acts</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://danwchan.ca" property="cc:attributionName" rel="cc:attributionURL">Daniel W Chan</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </div>
+{% endblock footer%}
+</div>
+
+</body>
+</html>

@@ -116,3 +116,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    '/home/danwchan/ongoing_projects/trail_of_cthulhu',
+    '/home/danwchan/ongoing_projects/trail_of_cthulhu/images',
+    '/home/danwchan/ongoing_projects/trail_of_cthulhu/sounds',
+]

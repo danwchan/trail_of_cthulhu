@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf" />
-<title>Investigator Creation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia Sans Libre">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://www.mythos-acts.ca/custom_mods.css">
+{% extends "./base.html" %}
 
-</head>
+{% block title %}Investigator Creation{% endblock title%}
 
+{% block activetext %}
 <body>
 <div class="w3-content w3-container w3-padding-64" id="about">
+
   <h1 class="w3-center">Character creation app<span class="blink">_</span></h1>
+  
   <div class="w3-panel w3-light-grey w3-leftbar">
     <i class="w3-serif w3-xlarge">The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents... some day the piecing together of dissociated knowledge will open up such terrifying vistas of reality, and of our frightful position therein, that we shall either go mad from the revelation or flee from the light into the peace and safety of a new Dark Age. <br></i>
     <span class="w3-sans"> - H.P. Lovecraft</span>
@@ -21,11 +15,11 @@
   
   <h2>Testing</h2>
 
-{% for occupation in occupations %}
-  <p><em>{{ occupation }}</em> {{ occupation.description|linebreaksbr}}</p> 
+{% for occupation in object_list %}
+  <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
+  <p>{{ occupation.description }}
 {% endfor %}
 
   <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
 </div>
-</body>
-</html>
+{% endblock activetext %}
