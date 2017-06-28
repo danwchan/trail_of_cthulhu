@@ -5,6 +5,10 @@ from birthcharacter.models import OccupationList, AssociatedOccuAbil
 
 # Create your views here.
 
+def occupation_list(request):
+    occupations = OccupationList.objects.all()
+    return render(request, 'characterbirther/make_investigator.html', {'occupations' : occupations})
+
 class Occupations(ListView):
     model = OccupationList
     template_name = 'characterbirther/make_investigator.html'
