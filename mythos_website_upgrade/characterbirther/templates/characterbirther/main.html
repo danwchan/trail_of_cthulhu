@@ -1,0 +1,295 @@
+{% extends "./base.html" %}
+
+{% block title %}Meaningful Acts: RPG storytelling{% endblock title%}
+
+{% block watermark %}
+<!--.      .......     :.,... ....... .  .............   .. ... . ..  ...  ...+N~. .
+..~........,..........:7IZ,.~?II?++=~~~::::::::::::::~$OOZZ8OO888DD888888DDDDN8O
+.,~=====+?IIZDDDNDDDDDDDDOZZOOZZ$7I?=~~:::~~~+??III?++$8O8OOO8DDDDDD88DDDNNND,..
+?+??++++?II7ZDDDDNNNNDDD8O8DNNNNNDO$?=~~~=+?7Z88DD8O$I$D888OO8DDDDDDDDDDNNMMMZM$
+.:I7II??I777ZNNNDNNNNNDD8DNNNMMMMNNDO7+==+IODNNMMMNNDOZNDD8D8DDDDDDDDDDNNMMMMMMO
+..,.$$777777ONNNNNNNNNDD8DNMMMMMMMMNDO7+=+$8NMMMMMMMN8ZNNNDDDDDNDDNNNNNNNMMMMM7.
+..+=77777$$$O88DNNNNNNNDDNMMMMMMMMMMN8ZI+IOMMMMMMMMMMDODMNNNNNNNDDNDNNNNNMMM...=
+..+IIIIII7$$Z8OODMNNMNNDDDMMMMMMMMMMNDZ??IOMMMMMMMMMMDOOMNMNNNNNNNNNNNNNNNMMMM.,
+.=I?????I7$$ZOOO8NNMMNDO8NMMMMMMMMMMD8ZI+?78MMMMMMMMMD$$NNDDNNNNNNNNNNNNNMMMM=:.
+..I?IIII77$ZZ88OODNNMNOZONMMMMMMMMND8OZ7+=?IZMMMMMMMNO+INZ8DNNNNMMMNNNNNNMMMMZ88
+,=I?+IIII7ZZZZZODD8DN8Z$ODNMMMMMMN8OOZZ7+===?DMMMMMN8Z=?OI8NNNNNNNNNNNNNNMMMMN,.
+,.=I=IIII7ZZZZOO8DD8DOZ$88DDDDDDDDOOZZ$I+===+ZDNND88ZI~+I?DNNNNNMMNNNNNNNMMMM...
++7I77III77$ZZZZZOOOO8OZO88D88888OZ8ZOO$?=====$O8OZ$77+==++DNNNNNMMMNNNNNMMMMMM..
+..?=I7I77$ZZZZZZZOOOOZZ8DDDDD88887ZO8DD$I???+?I8OZZZZ+===INNNNNNMMMNNNNNMMMMMN..
+.I+77777$$ZZOZZOOOO8OZO8DDDDDDDD$ZZZ8DDDOZ$7II88$OOO$7=~?8NNNNNNMMNNNNNNMMMMMD..
+..I,7$$$$ZZOOOOOODMM8O8ODDDNDNNDDNNMMMMMMMMMNOO88OZO$7=DNNMMMMMMMMMNMNNMMMMMMMM.
+..IZZZZZZOO8888888NMNODDDDNNNNNMMMMMMMMMMMMMMMNNDZZZ7++NMMMMMMMMMMMMMMMMMMMMMM7.
+.I~.ZZZZOO88888888DMN8DDDDNNNDNMMMMMMMMMMMMMMMMMN87Z$=IMMMMMMMMMMMMMMMMMMMMMM.:.
+:OOO77OOO888DDDDDDDNMDDNNNNNNDwhodoyouthinkyouareDO7O$?OMMMMMMMMMMMMMMMMMMMMMM~=.
+I+88888888DDDDDNNNNNNNNNNNNNNDNMMMMMMMMMMMMMMMMOOZ$OZ$NMMMMMMMMMMMMMMMMMMMMMM+$.
++O88888888DDDDNNNNNDNNMMNNNNNNNMMMMMMMMMMMMMMMM7ZZ$OZNMMMMMMMMMMMMMMMMMMMMMMMMN,
+ZNDDDDDDDDDNNNNMMMNNNNMMMMMMNNNMMMMMMMMMMMMMMMN$Z8ZONMMMMMMMMMMMMMMMMMMMMMMMMMD.
+...,+DDDDDNNNNMMMMMNNNMMMMMMMNNMMMMMMMMMMMMMMM$ZOOO8MMMMMMMMMMMMMMMMMMMMMMMMM..,
+.,DMNNNNNNNNNMMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMNZODD8DMMMMMMMMMMMMMMMMMMMMMMMMNMN.
+Z$NNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNODDD8NMMMMMMMMMMMMMMMMMMMMMMMMM~O8
+.INNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOD888NMMMMMMMMMMMMMMMMMMMMMMMMMMN.
+.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNZ8888NMMMMMMMMMMMMMMMMMMMNNMMMM.  
+.=MMMMN7=..:8?MM:M7MMMMMMMMMMMMMMMMMMMMMMM.M8ND887DNMMMMMMMMMMMMMMMNMMNNDDMM,, $-->
+{% endblock watermark %}
+
+{% block activetext %}
+<!-- First Parallax Image with fading in hook -->
+<div class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-middle" style="white-space:pre;">
+    <div class="w3-align-left w3-padding-large introtext">
+      <span class="t1 animate">There will be puzzles </span><span class="animate t2">and there will be cunning.</span>
+      <span class="animate t3">There will be tragedy </span><span class="animate t4">and there will be heroics.</span>
+      <span class="animate t5">There will be mystery </span><span class="animate t6">and there will be insight.</span>
+      <span class="animate t7">Collect clues and unravel the horror: </span><span class="sanimate t8">in the end</span><span class="sanimate t9"> nothing</span><span class="sanimate t10"> will</span><span class="sanimate t11"> save</span><span class="sanimate t12"> you.</span>
+      <span class="sanimate t13">Return to reality with only the memories of your meaningful acts.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h1 class="w3-center">Welcome prospective player<span class="blink">_</span></h1>
+  <div class="w3-panel w3-light-grey w3-leftbar">
+    <i class="w3-serif w3-xlarge">That is not dead that can eternal lie <br> And with strange aeons even death may die <br></i>
+    <span class="w3-sans"> - H.P. Lovecraft</span>
+  </div> 
+  
+  <h2>The Pitch</h2>
+  
+  <p>The <em>Trail of Cthluhu</em> Corebook says to pitch your game as X meets Y so that potential players will get a sense of what your game is like. I decided that as an organizer 
+  (known in-game as a Keeper) my game will aim to capture the tragic character arcs of 
+  <a href="https://s-media-cache-ak0.pinimg.com/originals/df/2a/1f/df2a1f185c3c9fe86c224a6d44c8ad17.gif">Penny Dreadful</a> with the open world reality-simulating "normal" of 
+  <a href="https://cdn.mmos.com/wp-content/gallery/second-life-overview/Second-Life-Profile.jpg">Second Life</a>. The goal of this game is to explore your 
+  <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly 
+  cautious or reckless as you can conceive. We will build this story together.</p>
+  
+  <h2>About my approach</h2>  
+  
+  <p>I have always been drawn to the work of <a href="https://en.wikipedia.org/wiki/H._P._Lovecraft">H.P. Lovecraft</a> because he managed to conjure such bizarre atmospheres in his writing. 
+  As I studied science in school, as I ponder the world, as I live my life: there has always been space for the types of unsettling questions which plagued the minds' of his characters. 
+  During one of my winter breaks from <a href="http://www.pnas.org/content/112/2/313.full.pdf">graduate school</a>, I purchased the <em>Masks of Nyarlathotep</em> and read the exciting adventure outlined 
+  for the <em>Call of Cthulhu</em> game system. The expansive and deadly world steeped in the Mythos seemed like something I wanted to contribute to. However, I had reservations about the reliance on 
+  <a href="https://feministfrequency.com/video/not-your-exotic-fantasy">cultural stereotypes</a> to create atmosphere and on stats-based dice rolls to progression of the story. I had heard about a 
+  more investigation focused rules system (GUMSHOE), so I headed to the <a href="http://www.torontopubliclibrary.ca/merril/">Merril Collection</a> at the Lillian H. Smith Library to read some of the 
+  Corebook for <em>Trail of Cthulhu</em>.
+  
+  <p>Kenneth Hite's introduction in that book opens with a wonderfully written reason why <em>Trail of Cthluhu</em> exists. That small sequence of paragraphs, set my fleshy gears into a slow 
+  and determined torque. Before I left to return for Chicago I stopped by the downtown <a href="http://www.htnorth.com/">Hairy Tarantula</a> to buy myself a copy. I resolved to <a href="#game">try</a> 
+  to use this investigation focused system to tell horror stories I could morally support. I aspire to create a foreboding imaginary space where players can roleplay their Investigators' unique 
+  <a href="https://en.wikipedia.org/wiki/Paradise_Lost">falls</a> while progressing via their wits through various levels of oppressive power and ignorance. I believe the potentially most powerful 
+  aspects of such a space are: to provide the freedom to make "impractical" decisions and follow through on the consequences. To listen to the imagined fears of others and vocalize their imagined 
+  solutions, no matter their "triviality". To visualize actions we might be uncomfortable with, and through that process come to a better understanding on how to plan meaningful action in our 
+  (sometimes) <a href="https://www.youtube.com/watch?v=q54VyCpXDH8">unbalanced</a> lives.</p>
+    
+</div>
+
+<!-- Second Parallax Image with game headline -->
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="game">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <h1 class="w3-xxxlarge w3-text-light-grey w3-wide">This Game</h1>
+  </div>
+</div>
+
+<!-- Container (Game Section) -->
+<div class="w3-content w3-container w3-padding-64">
+  <div class="w3-row-padding">
+    <div class="w3-half" id="format">
+      <h2>Format and Style</h2>
+      
+      <p>I will be running Purist campaigns as the Keeper for 4 or fewer players and their Investigators. Campaigns will be 3-4 sessions long with each session with at least 
+      3 hours of gameplay. Purist refers to a thematic orientation of the plot towards philosophical horror. In my case, this will not preclude an exciting firefight or 
+      interpersonal drama, but rather indicate that both those actions will carry with it a heavy cost (in Health and Stability respectively). I will focus the story on 
+      the terrible consequences of revealing Mythos truth and the personal costs for the Investigators. Motivations (known in-game as Drives) will play a large role in moving 
+      the plot and I will work with each player to finalize the Drive of their Investigator. The world will react as realistically as I can imagine it and I encourage players 
+      to tread carefully. Prioritize survival, but as this is a horror game you will have to venture out on a limb to progress the investigation!</p>
+      
+    </div>
+    <div class="w3-half">
+      <h2>Setting</h2>
+    
+      <p>Our game will start in the city of Toronto and will involve minimal intercontinental travel. I will try and involve players with the creation of the hook 
+      (the reason why their Investigator is where they are and involved with the plot). Cities will be a critical resource and location for investigations. 
+      Campaigns will be set in the present day and two <a href="#rulesvar">new abilities</a> will be added to govern the knowledge of computers and their use. As 
+      <em>Trail of Cthulhu</em> was written for a 1930's setting, please imagine appropriate updates to the occupational abilities and run them by the Keeper as you 
+      build your Investigator. Games will require that Investigators have working knowledge of the English language. I encourage players to think about how their Investigator has 
+      come to Toronto. Are they a long time local? Did they move for work? Did they move come as a refugee? There will be an attempt to replicate the forces of the 
+      law so make sure that you're ready to go of the grid if you have (or want) to engage in illegal activities.</p>
+    
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-half" id="build">
+      <h2>Investigator build limitations</h2>
+
+      <p>The following are restrictions to consider when building your Investigators:</p>
+      
+    <ul>
+      <li>All occupations and abilities will be permitted, but take care to properly integrate them for the modern world. <em>For example: how does
+      an Alienist make money in the modern world, does this modify their Credit Rating? Where do you have access to a horse for Riding?</em></li>
+      <li>Similarly, make sure you are prepared to say how you will use the skills you choose. A google-able answer is sufficient for most cases.</li>
+      <li>To conform to the Purist campaign I will be restricting Health and Stability pools to 12. Sanity will be capped at 10.</li>
+      <li>Choosing Sources of Stability (in addition to Pillars of Sanity) is a mandatory build task.</li>
+      <li>General build points will be set at 60 and Investigative build points at 18. No inter-party build point trading will be permitted.</li>
+      <li><a href="/build">Have fun</a> and take the liberty to work things to make them more flavourful. <a href="#contact">Contact</a> me for suggestions or to verify a modification.</li>
+    </ul>
+      
+    </div>
+    <div class="w3-half" id="rulesvar">
+    <h2>Rule variations</h2>
+    
+    <p>Each person can be assumed to know how to use a computer, but they are not necessarily going to be able to get the information or functions they want from it. Keep in mind that often 
+    computers are only the medium in which we interface with knowledge and people, therefore other Investigative abilities may be better suited than computer related abilities for your 
+    Investigator. Interpersonal skills can be used to get information from people over IRC or social media. Academic skills can be used to interpret or execute information dug up from databases.
+    For other use cases of the computer, the following abilities (1 Investigative, 1 General) will be added to the game to reflect the use of this powerful modern tool:</p>
+    
+  <div class="w3-accordion w3-light-grey">
+    <button onclick="myAccordian('section2')" class="w3-btn-block w3-left-align w3-slim w3-large">Coding (<em class="w3-sans">Technical ability</em>)</button>
+    <div id="section2" class="w3-accordion-content w3-container">
+      <div>You can are able to write computer code in language you also have a point in. Given enough time and access to the right documentation you may be able to write code in other 
+      formal languages used by machines. You can:
+      </div>
+      <div>
+        <ul>
+          <li><em>sort though large datasets</em></li>
+          <li><em>improve a predictive model</em></li>
+          <li><em>automate a series of program actions</em></li>
+          <li><em>read existing code to determine their general function</em></li>
+          <li><em>find unusual elements in existing code</em></li>
+        </ul>
+      </div>
+      <div>As an Occupational ability, the following occupations are candidates for use of Coding:
+      </div>
+      <div>
+        <ul>
+          <li><span class="w3-slim w3-large">Military (Engineers, Navy and Officers):</span> may substitute Coding for Outdoorsman</li>
+          <li><span class="w3-slim w3-large">Professor and Scientist:</span> may choose Coding as one of their two occupational abilities</li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <button onclick="myAccordian('section3')" class="w3-btn-block w3-left-align w3-slim w3-large">Internet (<em class="w3-sans">General ability</em>)</button>
+    <div id="section3" class="w3-accordion-content w3-container">
+      <div>You are experienced in leveraging the myriad technologies of the Internet to find information. A good way to think of someone trained in this skill is 
+      as a tech savvy consumer who is familiar with the newest consumer programs and/or connected to the right networks. Given the proper permissions, 
+      Credit Rating, and/or contacts you can:      
+      </div>
+      <div>
+        <ul>
+          <li><em>set up a web server</em></li>
+          <li><em>use TOR</em></li>
+          <li><em>determine the credibility of web sources</em></li>
+        </ul>
+      </div>
+      
+      <div>Internet doubles as an investigative ability when used to gather clues by:
+      </div>
+      <div>
+        <ul>
+          <li><em>finding hidden contact information</em></li>
+          <li><em>accessing private communications</em></li>
+          <li><em>downloading pirated files</em></li>
+        </ul>
+      </div>
+      <div>As an Occupational ability, the following occupations are candidates for use of Internet:
+      </div>
+      <div>
+        <ul>
+          <li><span class="w3-slim w3-large">Criminal:</span> may substitute Internet for Locksmith or Shadowing</li>
+          <li><span class="w3-slim w3-large">Journalist and Private Investigator:</span> may substitute Internet for Photography</li>
+        </ul>
+      </div>
+    </div>
+  </div>    
+    </div>
+  </div>
+</div>
+
+<!-- Third Parallax Image with story headline -->
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="story">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-xxxlarge w3-text-light-grey w3-wide">Our Story</span>
+  </div>
+</div>
+
+<!-- Story Section -->
+<div class="w3-content w3-container w3-padding-64">
+  <h1>Letters from the lost</h1>
+  <p>The story section for the site will be for cross campaign communication. If you are enjoying the gameplay with your Investigator, please consider writing an in-character letter 
+  to an NPC, Pillar of Stability or other PC. I would recommend the format of an email or perhaps a blog post. Send me the material and I will post it here along 
+  with other documents which belong to the world and the ongoing intrusions of the Mythos. Don't hesitate to contact me if you want to contribute something and are 
+  not currently engaged in a campaign. There undoubtedly will be a place for your twisted imagination to deposit its sticky eggs into this fledgling digital corpse.</p>
+  
+  <p>As you can probably guess, this section will take some time to get off the ground. I am hopeful it will grow into a special record of the meaningful acts committed 
+  for reasons entirely human in the face of indifferent forces.</p>
+
+  <div class="w3-accordion w3-light-grey">
+    <button onclick="myAccordian('section4')" class="w3-btn-block w3-left-align w3-wide">Campaign <span style="text-decoration: line-through">ZERO<span></button>
+    <div id="section4" class="w3-accordion-content w3-container">
+      <div>NOW ACCEPTING PLAYERS</div>
+      <div>NOW ACCEPTING PLAYERS</div>
+      <div>NOW ACCEPT1NG PLAYERS</div>
+      <div>NOW ACC3PT1NG PLAYER5</div>
+      <div>N0W ACC3PT1NG PLAYER5</div>
+      <div>N0W ACC3PT1NG PL8Y3R5</div>
+    </div>
+    <button onclick="myAccordian('section5')" class="w3-btn-block w3-left-align w3-wide">From Beyond</button>
+    <div id="section5" class="w3-accordion-content w3-container">
+      <div class="w3-padding-small">A series of dead(?) links</div>
+      <a href="#">a letter from Martha Blokke</a> 
+      <a href="#">the last tweet from James Cheung</a>
+      <a href="#" style="white-space: pre-wrap">an email from Marcel Furchette to Jean Nobruga</a>
+      <a href="#">an anonymous blog post</a>
+      <div class="w3-padding-small">The link to the future page</div>
+      <a href="#">read more</a>
+    </div>
+    <button onclick="myAccordian('section6')" class="w3-btn-block w3-left-align w3-slim">at the End there will still be our w͐̀̀͛̚or̽ͪ͐ͪͭͨ͋d̄ͮͨ̋s̔̆̎̆</button>
+    <div id="section6" class="w3-accordion-content w3-container" style="white-space: pre-wrap">
+      <div class="w3-padding-small">︿_____︿__︿︿__________<span class="w3-hover-text-deepred">✞</span> _____________</div>  
+      <div class="w3-padding-small">ѧѦ ѧ ︵͡︵︵ ̢︵ Ѧѧ ︵͡ ︵ ѧ Ѧ︵<span class="w3-hover-text-deepred">  ̵̗̊o̵̖ </span>︵ ѦѦ ѧ</div>
+      <div class="w3-padding-small">w̘͞ḛ̸̲͙̖̼͙s͖̮̦e̗r̦ṿ̖̩̪͎̼̭et̞̱̺̮̩͠ẖ̠͙͔͍e̹̪<span class="w3-hover-text-deepred">m҉̘͇̼͉͔̜a̴̰̲̖̘s̗̹̫̫̲t̨eͅr̨̻͎</span>b̦͠e͖̝t̛͇̮̞̳̩̲͍w̷̮͕e̺͔̘e҉̪n̝̹̩͙ sl̶͉̜̼͖̹̥̲e̺͙̖̦͟e̥̣p̹̗̞͙a͚̘̮̟̟ń̩̞̮͎͈̝̫d͈̦̫̬͈w̲̩ak̘̺͇i̼̞n̤̬̭͝g̢̩͉</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Fourth Parallax Image with contact headline -->
+<div class="bgimg-4 w3-display-container w3-opacity-min" id="contact">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-xxxlarge w3-text-light-grey w3-wide">Let's play!</span>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-content w3-container w3-padding-64">
+  <h1>Join a game</h1>
+  
+  <p> As you may have gleaned from the <a href="#format">game</a> section of the site: I would like to play <em>Trail of Cthulhu</em> as an organizer/ Dungeon Master (known in-game as a Keeper). 
+  Campaigns will be 3-4 sessions long with each session with at least 3 hours of gameplay. Sessions will run in my home with up to 4 players and their characters 
+  (known in-game as <a href="/build">Investigators</a>). I hope the "mini campaigns" to be fun and challenging, collaborative story-telling experiences with a blend of gameplay and opportunities 
+  for socializing. I will try to keep the narrative going over the course of many mini campaigns with players and/or Investigators freely dropping out and joining as required.</p>
+  
+  <p> I hope to run these for as long as I have the fortitude. If you like your Investigator and they survive: you can play them again. If you didn't 
+  like your Instigator or they didn't survive: you can make a new one. And of course, if the experience wasn't your cup of tea I hope to see you again in some other capacity</p>
+  
+  <p> My first contact with you as a player will involve setting you up with the materials to <a href="/build">build</a> your Investigator, setting your boundaries, and determining some common interests/goals. 
+  Upon reaching a group of players who have made their Investigator, I will facilitate the scheduling of the sessions. Wash. Rinse. Repeat. (I hope, wish me luck! Please feel free to 
+  provide criticism, recommendations or praise for this project.)</p>
+  
+  <div class="w3-row-padding">
+    <div class="w3-twothird">
+      <div class="w3-panel w3-grey w3-leftbar w3-border-black">
+        <p>If the voices in your head tell you that playing this game is a good idea, contact me RIGHT NOW by 
+        <a href="mailto:mythos.acts@gmail.com?Subject=mythos" target="_top">email</a> with "mythos" in the subject line to schedule your game!
+      </div>
+    </div>  
+    <div class="w3-third w3-margin-top">
+      <i class="fa fa-map-marker" style="width:30px"></i> South Loop, Chicago, USA<br>
+      <i class="fa fa-phone" style="width:30px"></i> Phone: 3125325036<br>
+      <i class="fa fa-envelope" style="width:30px"> </i> Email: mythos.acts@gmail.com<br>
+    </div>
+  </div>
+
+</div>
+{% endblock activetext %}

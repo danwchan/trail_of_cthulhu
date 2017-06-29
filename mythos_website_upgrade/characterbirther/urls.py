@@ -7,6 +7,6 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [  
-    url(r'^$', TemplateView.as_view(template_name='main.html')),
+    url(r'^$', TemplateView.as_view(template_name='characterbirther/main.html')),
     url(r'build$', views.occupation_list, name='make_investigator'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
