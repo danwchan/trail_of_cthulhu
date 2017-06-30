@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide {
 	font-family: "Averia Sans Libre", "Lato", sans-serif;
 	}
 p {text-indent: 5%}
-a {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#b70000;}
+a, button {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#b70000;}
 .w3-sans{font-family:"Segoe UI",Arial,sans-serif}
 .introtext {
 	 text-indent: 0px;
@@ -17,6 +17,7 @@ a {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#b70000;}
 @media (min-width:1050px){.introtext {font-size:30px;}}
 .w3-deepred,.w3-hover-deepred:hover{color:#fff!important;background-color:#b70000!important}
 .w3-text-deepred,.w3-hover-text-deepred:hover{color:#b70000!important}
+.w3-top{overflow: visible;}
 .animate {
 	opacity:0;
 	-webkit-animation-fill-mode:forwards;
