@@ -2,6 +2,38 @@
 
 {% block title %}Investigator Creation{% endblock title%}
 
+{% block topnav %}
+
+<!-- Navbar -->
+<div class="w3-top w3-black w3-center">
+  <div class="w3-card-2">
+    <a class="w3-padding-large w3-hide-medium w3-hide-large w3-bar-item w3-button w3-right" href="javascript:void(0)" onclick="toggleShow('navDemo')" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#about" class="w3-padding-large w3-hide-small w3-bar-item w3-button">ABOUT</a>
+    <a href="#game" class="w3-padding-large w3-hide-small w3-bar-item w3-button">GAME</a>
+    <a href="#story" class="w3-padding-large w3-hide-small w3-bar-item w3-button">STORY</a>
+    <!-- the play button remains in small views -->
+    <a href="#contact" class="w3-padding-large w3-bar-item w3-button">PLAY</a>
+    <div class="w3-hide-small w3-dropdown-click">
+      <button onclick="toggleShow('dropmenu')" class="w3-padding-large w3-button">Details <i class="fa fa-caret-down"></i></button>
+      <div id="dropmenu" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
+        <a href="#game" class="w3-bar-item w3-button">GAME</a>
+        <a href="#story" class="w3-bar-item w3-button">STORY</a>
+        <a href="#" class="w3-bar-item w3-button">PARTICIPANTS</a>
+      </div>
+    </div>
+  </div>
+
+<!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-black">
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#game" class="w3-bar-item w3-button">GAME DETAILS</a>
+    <a href="#story" class="w3-bar-item w3-button">STORY DETAILS</a>
+    <a href="#" class="w3-bar-item w3-button">PARTICIPANTS</a>
+  </div>
+
+</div>
+{% endblock topnav %}
+
 {% block activetext %}
 <div class="w3-content w3-container w3-padding-64" id="about">
 
