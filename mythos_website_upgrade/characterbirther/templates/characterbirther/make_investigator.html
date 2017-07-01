@@ -36,17 +36,54 @@
   {% include "./cart_sidebar.html %}
 
   <div class="w3-container" id="main">
-		
+
+<!-- content accordian for drives, will comment sections of function here in django with which are duplicated in later sections (occupation, abilities) -->		
     <div onclick="myAccordian('drive')" class="bgimg-3 w3-btn w3-bar w3-section">
       <span class="w3-left w3-large w3-wide w3-text-light-grey">Drives</span>
       <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
     </div>
     
     <div id="drive" class="w3-hide w3-container">
-      {% for drive in drives %}
-      <p><em>{{ drive }}</em></p> 
-      <p>{{ drive.description }}
+    
+      {% comment %}
+      this is the loop which looks for all the drives in the DriveList as called by 'drives'
+      each item is rendered as a link which redirects to a please turn on JS page if the on click JS can't function to bring up a modal with details on the item
+      {% endcomment %}
+        
+      {% for drive in drives %}      
+      <div>
+        <a href="/JS_use.html" onclick="popON('{{ drive }}'); return false;" class="w3-wide w3-large">{{ drive }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+
+<!-- this is the bar at the bottom of the list which collapses the accordian -->
+      <div class="w3-display-container w3-black">
+          <div class="w3-tiny w3-display-left">collapse {{ drive }} options</div>
+          <div class="w3-tiny w3-display-right"><i class="fa fa-caret-up"></i></div>
+      </div>
+      
+<!-- this is the popup modal which gives details on the drive which is clicked -->
+      <div id="{{ drive }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ drive }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ drive }}</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ drive.description }}</p>
+            
+            <h5>Recommended occupations</h5>
+            {% for occupation in drive.associatedoccudrive_set.all %}
+            <p>{{ occupation.associated_occupations_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
       {% endfor %}
+            
     </div>
 
     <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">

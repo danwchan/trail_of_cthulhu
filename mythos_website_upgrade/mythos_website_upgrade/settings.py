@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'randomslugfield',
     'birthcharacter',
-    'characterbirther'
+    'characterbirther',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,3 +124,6 @@ STATICFILES_DIRS = [
     '/home/danwchan/ongoing_projects/trail_of_cthulhu/images',
     '/home/danwchan/ongoing_projects/trail_of_cthulhu/sounds',
 ]
+
+# For debugging
+INTERNAL_IPS = ('127.0.0.1')

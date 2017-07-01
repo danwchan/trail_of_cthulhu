@@ -87,3 +87,12 @@ function toggleSidecol() {
   document.getElementById("sidebar").classList.toggle("w3-show");
   document.getElementById("floatbtn").classList.toggle("w3-hide");
 }
+
+//used to toggle the details popup
+function popON(id) {
+	document.getElementById(id).style.display='block'
+}
+
+function popOFF(id) {
+	document.getElementById(id).style.display='none'
+}
