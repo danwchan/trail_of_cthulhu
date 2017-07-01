@@ -27,7 +27,7 @@
 
 <!-- title of the page -->
 <div class="w3-row">
-  <h1 class="w3-center w3-padding-32">Character creation app<span class="blink">_</span></h1>
+  <h1 class="w3-center w3-padding-48 w3-xxxlarge">Character creation app<span class="blink">_</span></h1>
 </div>
 
 <!-- div wrapper for the main and sidebar -->
@@ -37,12 +37,41 @@
 
   <div class="w3-container" id="main">
 		
-    <h2>Testing</h2>
-		
-    {% for occupation in occupations %}
-    <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
-    <p>{{ occupation.description }}
-    {% endfor %}
+    <div onclick="myAccordian('drive')" class="bgimg-3 w3-btn w3-bar w3-section">
+      <span class="w3-left w3-large w3-wide w3-text-light-grey">Drives</span>
+      <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+    </div>
+    
+    <div id="drive" class="w3-hide w3-container">
+      {% for occupation in occupations %}
+      <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
+      <p>{{ occupation.description }}
+      {% endfor %}
+    </div>
+
+    <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">
+      <span class="w3-left w3-large w3-wide w3-text-light-grey">Occupations</span>
+      <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+    </div>
+    
+    <div id="occupation" class="w3-hide w3-container">
+      {% for occupation in occupations %}
+      <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
+      <p>{{ occupation.description }}
+      {% endfor %}
+    </div>
+
+    <div onclick="myAccordian('ability')" class="bgimg-3 w3-btn w3-bar w3-section">
+      <span class="w3-left w3-large w3-wide w3-text-light-grey">Abilities</span>
+      <span class="w3-right w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+    </div>
+    
+    <div id="ability" class="w3-hide w3-container">
+      {% for occupation in occupations %}
+      <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
+      <p>{{ occupation.description }}
+      {% endfor %}
+    </div>
 	
     <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
 
