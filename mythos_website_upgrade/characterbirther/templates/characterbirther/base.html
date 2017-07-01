@@ -58,7 +58,7 @@
 {% block topnav %}
 
 <!-- Navbar -->
-<div class="w3-top">
+<div class="w3-top" id="nav">
 
   <div class="w3-top w3-bar w3-black w3-card-2 w3-left-align">
     <a class="w3-padding-large w3-hide-medium w3-hide-large w3-bar-item w3-button w3-right" href="javascript:void(0)" onclick="toggleShow('navDemo')" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -94,7 +94,7 @@
 </div>
 {% endblock topnav %}
 
-{% block activetext%} <p>Hello, I am the active text block. Fill me with things that will be major</p> {% endblock %}
+{% block activetext%}<div id="main"> <p>Hello, I am the active text block. Fill me with things that will be major</p> {% endblock %}
 
 <!-- footer -->
 

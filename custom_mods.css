@@ -18,6 +18,7 @@ a, button {font-family: "Averia Sans Libre", "Lato", sans-serif;}a:hover{color:#
 .w3-deepred,.w3-hover-deepred:hover{color:#fff!important;background-color:#b70000!important}
 .w3-text-deepred,.w3-hover-text-deepred:hover{color:#b70000!important}
 .w3-top{overflow: visible;}
+.overlay{position:fixed; z-index:2;}
 .animate {
 	opacity:0;
 	-webkit-animation-fill-mode:forwards;

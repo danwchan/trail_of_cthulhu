@@ -5,9 +5,7 @@
 {% block topnav %}
 
 <!-- Navbar -->
-<div class="w3-top w3-black w3-center">
-  <div class="w3-card-2">
-    <a class="w3-padding-large w3-hide-medium w3-hide-large w3-bar-item w3-button w3-right" href="javascript:void(0)" onclick="toggleShow('navDemo')" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+<div class="w3-display-container w3-top w3-black w3-center" id="nav">
     <a href="#about" class="w3-padding-large w3-hide-small w3-bar-item w3-button">ABOUT</a>
     <a href="#game" class="w3-padding-large w3-hide-small w3-bar-item w3-button">GAME</a>
     <a href="#story" class="w3-padding-large w3-hide-small w3-bar-item w3-button">STORY</a>
@@ -21,36 +19,45 @@
         <a href="#" class="w3-bar-item w3-button">PARTICIPANTS</a>
       </div>
     </div>
-  </div>
-
-<!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-black">
-    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#game" class="w3-bar-item w3-button">GAME DETAILS</a>
-    <a href="#story" class="w3-bar-item w3-button">STORY DETAILS</a>
-    <a href="#" class="w3-bar-item w3-button">PARTICIPANTS</a>
-  </div>
-
 </div>
+
 {% endblock topnav %}
 
 {% block activetext %}
-<div class="w3-content w3-container w3-padding-64" id="about">
+<div class="w3-row">
+  <h1 class="w3-center w3-padding-48">Character creation app<span class="blink">_</span></h1>
+</div>
 
-  <h1 class="w3-center">Character creation app<span class="blink">_</span></h1>
+<!-- div wrapper for the main and sidebar -->
+<div class="w3-display-container w3-row">
+ 
+  <div class="w3-display-right overlay">
+    <button class="w3-button w3-ripple w3-black w3-large w3-round-xxlarge w3-padding-32 w3-opacity" onclick="toggleSidecol()" id="floatbtn">
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </button>
+  </div>
   
-  <div class="w3-panel w3-light-grey w3-leftbar">
-    <i class="w3-serif w3-xlarge">The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents... some day the piecing together of dissociated knowledge will open up such terrifying vistas of reality, and of our frightful position therein, that we shall either go mad from the revelation or flee from the light into the peace and safety of a new Dark Age. <br></i>
-    <span class="w3-sans"> - H.P. Lovecraft</span>
-  </div> 
-  
-  <h2>Testing</h2>
+<!--  {% include "./cart_sidebar.html %} -->
 
-{% for occupation in occupations %}
-  <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
-  <p>{{ occupation.description }}
-{% endfor %}
+  <div class="w3-display-right w3-bar-block w3-grey w3-card-2 w3-mobile w3-animate-right w3-hide overlay" id="sidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="toggleSidecol()">Close &times;</button>
+    <a class="w3-bar-item w3-button" href="#">Link 1</a>
+    <a class="w3-bar-item w3-button" href="#">Link 2</a>
+    <a class="w3-bar-item w3-button" href="#">Link 3</a>
+  </div>
 
-  <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
+  <div class="w3-container" id="main">
+		
+    <h2>Testing</h2>
+		
+    {% for occupation in occupations %}
+    <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
+    <p>{{ occupation.description }}
+    {% endfor %}
+	
+    <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
+
+  </div>
+
 </div>
 {% endblock activetext %}

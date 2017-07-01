@@ -1,10 +1,10 @@
 c2e.convert_special: 0
 e2c.convert_num: 0
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css:1133:0:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js:810:0:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:1552:1233:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/main.html:13104:7345:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:1309:0:1:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css:475:0:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:251:0:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js:2715:1405:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:1572:0:1:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/cart_sidebar.html:442:0:0:
 snr_recursion_level: 5
 convertcolumn_horizontally: 0
 adv_open_matchname: 0
@@ -48,6 +48,7 @@ recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/w3_2point8
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/main.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/cart_sidebar.html
 snr_replacetype: 0
 savedir: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther
 spell_check_default: 1
