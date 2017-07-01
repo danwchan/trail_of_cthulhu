@@ -8,5 +8,5 @@ from . import views
 
 urlpatterns = [  
     url(r'^$', TemplateView.as_view(template_name='characterbirther/main.html')),
-    url(r'build$', views.occupation_list, name='make_investigator'),
+    url(r'build$', views.browse_options, name='make_investigator'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

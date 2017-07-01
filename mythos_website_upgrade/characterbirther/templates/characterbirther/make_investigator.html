@@ -43,9 +43,9 @@
     </div>
     
     <div id="drive" class="w3-hide w3-container">
-      {% for occupation in occupations %}
-      <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
-      <p>{{ occupation.description }}
+      {% for drive in drives %}
+      <p><em>{{ drive }}</em></p> 
+      <p>{{ drive.description }}
       {% endfor %}
     </div>
 
@@ -56,7 +56,7 @@
     
     <div id="occupation" class="w3-hide w3-container">
       {% for occupation in occupations %}
-      <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
+      <p><em>{{ occupation }}</em></p> 
       <p>{{ occupation.description }}
       {% endfor %}
     </div>
@@ -67,9 +67,9 @@
     </div>
     
     <div id="ability" class="w3-hide w3-container">
-      {% for occupation in occupations %}
-      <p><em>{{ occupation }}</em> {{ occupation.occupational_abilities }}</p> 
-      <p>{{ occupation.description }}
+      {% for ability in abilities %}
+      <p><em>{{ ability }}</em> ({{ ability.major_type }})</p> 
+      <p>{{ ability.description }}
       {% endfor %}
     </div>
 	

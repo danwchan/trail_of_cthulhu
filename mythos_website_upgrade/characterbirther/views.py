@@ -1,13 +1,21 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from birthcharacter.models import OccupationList, AssociatedOccuAbil
+from birthcharacter.models import OccupationList, AbilityList, DriveList
 
 # Create your views here.
 
-def occupation_list(request):
+def browse_options(request):
     occupations = OccupationList.objects.all()
-    return render(request, 'characterbirther/make_investigator.html', {'occupations' : occupations})
+    abilities = AbilityList.objects.all()
+    drives = DriveList.objects.all()
+    data_aliases = {'occupations' : occupations,
+                    'abilities' : abilities,
+                    'drives' : drives,}
+    return render(request, 'characterbirther/make_investigator.html', data_aliases)
+
+'''
+some general view templates that are over your head at the moment
 
 class Occupations(ListView):
     model = OccupationList
@@ -30,3 +38,4 @@ class CharacterOptionsView(DetailView):
         # Assign data to the context data
         context['occupational_abilities'] = AssociatedOccuAbil.objects.all()
         return context
+'''
