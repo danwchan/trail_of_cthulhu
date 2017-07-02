@@ -9,13 +9,27 @@ class BirthForm(models.Model):
     name = models.CharField('the Name of your investigator', max_length = 50)
     occupation = models.ForeignKey(
         OccupationList,
-        on_delete = models.PROTECT
+        on_delete = models.PROTECT,
+        blank = True,
+        null = True
     )
     drive = models.ForeignKey(
         DriveList,
-        on_delete = models.PROTECT
+        on_delete = models.PROTECT,
+        blank = True,
+        null = True
     )
-    birthplace = models.CharField('the place where the character is born', max_length=25)
+    birthplace = models.CharField(
+        'the place where the character is born',
+        max_length=25,
+        blank = True,
+        null = True
+    )
+    confirm_drive = models.BooleanField('drive selection completed')
+    confirm_occupation = models.BooleanField('occupation selection completed')
+    confirm_pillars = models.BooleanField('pillars of sanity selection completed')
+    confirm_sources = models.BooleanField('sources of sanity selection completed')
+    confirm_background = models.BooleanField('character background completed')
     
 #InnateAbility model is responsible for holding the values of created players skills
 class InnateAbility(models.Model):
