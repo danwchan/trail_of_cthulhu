@@ -32,25 +32,60 @@
 
 <!-- for for entering the basics -->
 
-<form class="w3-container">
-  <div class="w3-light-grey w3-border w3-display-container">
-    <div class="w3-container">    
-    <h2>Who will you be?</h2>  
+<form class="w3-container" method="post">
+  {% csrf_token %}
+<div class="w3-light-grey w3-border w3-display-container">   
+  <div class="w3-container w3-section w3-half">
+
+    <h2>Who will you be?</h2>
+    
+    {% for field in birth_form %}
+    <div class="w3-section">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
     </div>
-    <div class="w3-container w3-section">
-      <input class="w3-input w3-light-grey w3-border-black w3-border-bottom" type="text" style="width:50%">
-      <br>
-      <input class="w3-input w3-border w3-animate-input w3-padding" type="text" style="width:50%">
-      <br>
-      <button class="w3-button w3-black w3-ripple">Confirm character</button>
-    </div>
+    {% endfor %}
   </div>
+  
+  <div class="w3-container w3-section w3-half">
+  
+    <h2>Why are you?</h2>
+    
+    {% for field in birth_form %}
+    <div class="w3-section">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    
+  </div>
+  
+  <div class="w3-container w3-section">
+    <input type="submit" class="w3-button w3-black w3-ripple" value="Confirm Investigator">
+  </div>
+
+</div>
 </form>
 
 <!-- div wrapper for the main and sidebar -->
 <div class="w3-display-container w3-row">
   
-  {% include "./cart_sidebar.html %}
+<!-- this is the button to access the character 'cart'-->
+  <div class="w3-display-right overlay">
+    <button class="w3-button w3-ripple w3-black w3-large w3-round-xxlarge w3-padding-32 w3-opacity" onclick="toggleSidecol()" id="floatbtn">
+      build <br>
+      <i class="fa fa-user" aria-hidden="true"></i> <br>
+      cart
+    </button>
+  </div>
+
+<!-- this is the character 'cart' -->
+  <div class="w3-display-right w3-bar-block w3-grey w3-card-2 w3-mobile w3-animate-right w3-hide overlay" id="sidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="toggleSidecol()">Close &times;</button>
+    <a class="w3-bar-item w3-button" href="#">Link 1</a>
+    <a class="w3-bar-item w3-button" href="#">Link 2</a>
+    <a class="w3-bar-item w3-button" href="#">Link 3</a>
+  </div>
 
   <div class="w3-container" id="main">
   
@@ -101,33 +136,95 @@
       <div onclick="myAccordian('drive')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
           <div class="w3-tiny w3-left w3-wide">collapse Drive options</div>
           <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
+      </div>          
+    </div>
+
+<!-- OCCUPATION CONTENT -->
+  <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">
+    <span class="w3-left w3-large w3-wide w3-text-light-grey">Occupations</span>
+    <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+  </div>
+    
+  <div id="occupation" class="w3-hide w3-container">    
+    
+    {% for occupation in occupations %}      
+      <div>
+        <a href="/JS_use.html" onclick="popON('{{ occupation }}'); return false;" class="w3-wide w3-large">{{ occupation }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
       </div>
+    
+<!-- OCCUPATION MODAL -->
+      <div id="{{ occupation }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ occupation }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ occupation }}</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ occupation.description }}</p>
             
+            <h5>Occupational Abilities</h5>
+            {% for ability in occupation.associatedoccuabil_set.all %}
+            <p>{{ ability.occupational_abilities_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
+      {% endfor %}
+      
+<!-- OCCUPATION COLLAPSE -->
+      <div onclick="myAccordian('occupation')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
+          <div class="w3-tiny w3-left w3-wide">collapse Occupation options</div>
+          <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
+      </div>
+  </div>
+
+<!-- ABILITY CONTENT -->
+  <div onclick="myAccordian('ability')" class="bgimg-3 w3-btn w3-bar w3-section">
+    <span class="w3-left w3-large w3-wide w3-text-light-grey">Abilities</span>
+    <span class="w3-right w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+  </div>
+    
+  <div id="ability" class="w3-hide w3-container">
+
+  {% for ability in abilities %}      
+    <div>
+      <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
+      <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
     </div>
 
-    <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">
-      <span class="w3-left w3-large w3-wide w3-text-light-grey">Occupations</span>
-      <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
-    </div>
     
-    <div id="occupation" class="w3-hide w3-container">
-      {% for occupation in occupations %}
-      <p><em>{{ occupation }}</em></p> 
-      <p>{{ occupation.description }}
-      {% endfor %}
-    </div>
+<!-- OCCUPATION MODAL -->
+      <div id="{{ ability }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ ability }} ({{ ability.major_type }})</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ ability.description }}</p>
+            
+            <h5>Associated Occupations</h5>
+            {% for occupation in ability.associatedoccuabil_set.all %}
+            <p>{{ occupation.associated_occupations_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
+      {% endfor %}    
 
-    <div onclick="myAccordian('ability')" class="bgimg-3 w3-btn w3-bar w3-section">
-      <span class="w3-left w3-large w3-wide w3-text-light-grey">Abilities</span>
-      <span class="w3-right w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+<!-- ABILITY COLLAPSE -->
+    <div onclick="myAccordian('ability')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
+      <div class="w3-tiny w3-left w3-wide">collapse Ability options</div>
+      <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
     </div>
-    
-    <div id="ability" class="w3-hide w3-container">
-      {% for ability in abilities %}
-      <p><em>{{ ability }}</em> ({{ ability.major_type }})</p> 
-      <p>{{ ability.description }}
-      {% endfor %}
-    </div>
+  </div>
 	
     <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
 

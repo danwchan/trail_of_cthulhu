@@ -6,7 +6,7 @@ from birthcharacter.models import AbilityList, OccupationList, DriveList, Revisi
 #BirthForm model is responsible for holding the created player characters
 class BirthForm(models.Model):
     birthcode = RandomSlugField(length=7, primary_key = True)
-    name = models.CharField('the Name of your investigator', max_length = 50)
+    name = models.CharField(max_length = 50)
     occupation = models.ForeignKey(
         OccupationList,
         on_delete = models.PROTECT,
@@ -20,11 +20,22 @@ class BirthForm(models.Model):
         null = True
     )
     birthplace = models.CharField(
-        'the place where the character is born',
-        max_length=25,
+#        'the place where the Investigator was born',
+        max_length = 50,
         blank = True,
         null = True
     )
+    age = models.IntegerField(blank = True, null = True)
+    PRONOUN_CHOICES = (
+        ('Y', 'they/them/theirs'),
+        ('M', 'he/him/his'),
+        ('F', 'she/her/hers')
+    )
+    pronoun = models.CharField(
+        'Preferred pronouns',
+        max_length = 1,
+        choices = PRONOUN_CHOICES,
+        )
     confirm_drive = models.BooleanField('drive selection completed')
     confirm_occupation = models.BooleanField('occupation selection completed')
     confirm_pillars = models.BooleanField('pillars of sanity selection completed')

@@ -1,22 +1,49 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from birthcharacter.models import OccupationList, AbilityList, DriveList, AssociatedOccuAbil
+from birthcharacter.models import OccupationList, AbilityList, DriveList, AssociatedOccuAbil, AssociatedOccuDrive
+from characterbirther.forms import CharBirthForm
 
 # Create your views here.
 
 def browse_options(request):
-    occupations = OccupationList.objects.all()
-    abilities = AbilityList.objects.all()
-    drives = DriveList.objects.all()
-    drive_2_occupation = AssociatedOccuAbil.objects.all()
-    #DriveList.objects.filter(associatedoccudrive__drive = 'Antiquarian')
-    data_aliases = {'occupations' : occupations,
-                    'abilities' : abilities,
-                    'drives' : drives,
-                    'recommended_occupations' : drive_2_occupation,
+    # import in the data from other methods (why is this useful?)
+    characteroptions = data()
+    foreign_key_tables = data2()
+#    form = CharBirthForm()
+#    forms = data3()
+    data_aliases = {'occupations' : characteroptions['occupations'],
+                    'abilities' : characteroptions['abilities'],
+                    'drives' : characteroptions['drives'],
+                    'recommended_occupations' : foreign_key_tables['occupation2abilities'],
+                    'birth_form' : CharBirthForm(),
                     }
+    # up next some logic to govern the post get methods 
+    if request.method == "POST":
+        form = CharBirthForm(request.POST)
+        if form.is_vaild():
+            return HttpResponseRedirect('/success/')
+        else:
+            form = CharBirthForm()
     return render(request, 'characterbirther/make_investigator.html', data_aliases)
+
+def data():
+    characteroptions = {'occupations' : OccupationList.objects.all(),
+                        'abilities' : AbilityList.objects.all(),
+                        'drives' : DriveList.objects.all(),
+                        }
+    return characteroptions
+
+def data2():
+    foreign_key_tables = {'drive2occupation' : AssociatedOccuDrive.objects.all(),
+                          'occupation2abilities' : AssociatedOccuAbil.objects.all(),
+                          }
+    return foreign_key_tables
+
+#def data3():
+#    forms = {'birth_form' : CharBirthForm(),
+#             }
+#    return forms
 
 #for the python debug toolbar
     
@@ -44,4 +71,8 @@ class CharacterOptionsView(DetailView):
         # Assign data to the context data
         context['occupational_abilities'] = AssociatedOccuAbil.objects.all()
         return context
+
+a line of code to filter some things out from the database        
+#DriveList.objects.filter(associatedoccudrive__drive = 'Antiquarian')
+
 '''

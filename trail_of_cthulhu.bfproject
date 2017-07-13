@@ -1,9 +1,8 @@
 c2e.convert_special: 0
 e2c.convert_num: 0
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:251:382:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:2026:1087:1:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/cart_sidebar.html:753:0:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js:3192:1555:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:325:0:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:8060:6011:1:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js:3192:1423:0:
 snr_recursion_level: 5
 convertcolumn_horizontally: 0
 adv_open_matchname: 0
@@ -43,10 +42,10 @@ recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/the_pitch.
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/index.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/w3_2point8testing.css
-recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/main.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/cart_sidebar.html
-recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/main.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js
 snr_replacetype: 0
 savedir: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther
