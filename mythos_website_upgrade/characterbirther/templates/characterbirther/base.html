@@ -6,14 +6,25 @@
 <meta charset="utf" />
 <title>{% block title %}This is the title of the page{% endblock title%}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css">
-<!-- for offline development -->
-<link rel="stylesheet" href="{% static "w3_2point8testing.css" %}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia Sans Libre">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="{% static "custom_mods.css" %}">
 </head>
 
+<!-- css fallback, mostly for offline development
+<script type="text/javascript">
+$.each(document.styleSheets, function(i,sheet){
+  if(sheet.href=="http://www.w3schools.com/w3css/4/w3.css") {
+    var rules = sheet.rules ? sheet.rules : sheet.cssRules;
+    if (rules.length == 0) {
+      $('<link rel="stylesheet" type="text/css" href="{% static w3_backup.css %}">').appendTo('head');
+    }
+ }
+})
+</script>
+ -->
+ 
 {% block watermark %}{% endblock watermark %}
 
 <style>

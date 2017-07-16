@@ -1,8 +1,9 @@
 c2e.convert_special: 0
 e2c.convert_num: 0
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:325:0:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:8060:6011:1:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js:3192:1423:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:5556:0:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:9452:8985:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js:3216:1555:1:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css:307:0:0:
 snr_recursion_level: 5
 convertcolumn_horizontally: 0
 adv_open_matchname: 0
@@ -18,11 +19,12 @@ c2e.convert_iso: 0
 opendir: file:///home/danwchan/ongoing_projects/trail_of_cthulhu
 wrap_text_default: 0
 default_mime_type: text/plain
-ssearch_text: send
+ssearch_text: listbar
 snr_casesens: 1
 view_blocks: 1
 name: trail_of_cthulhu
 replacelist: div
+replacelist: listbar
 fb_show_hidden_f: 0
 editor_tab_width: 3
 template: /usr/share/bluefish/templates/HTML_5
@@ -40,15 +42,15 @@ ssearch_casesens: 0
 charmap_block: 1
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/the_pitch.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/index.html
-recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/w3_2point8testing.css
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/main.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/cart_sidebar.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css
 snr_replacetype: 0
-savedir: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther
+savedir: file:///home/danwchan/ongoing_projects/trail_of_cthulhu
 spell_check_default: 1
 spell_insert_entities: 0
 last_filefilter: 
@@ -57,13 +59,8 @@ view_blockstack: 1
 snr_escape_chars: 0
 fb_viewmode: 0
 spell_lang: en_US
-searchlist: hoevr
-searchlist: hover
-searchlist: sans
-searchlist: serif
 searchlist: wide
 searchlist: red
-searchlist: li
 searchlist: opennav
 searchlist: row-padding
 searchlist: keeper
@@ -72,6 +69,11 @@ searchlist: character
 searchlist: gamepl
 searchlist: coding
 searchlist: send
+searchlist: characyer
+searchlist: characyr
+searchlist: character optio
+searchlist: subbar
+searchlist: listbar
 ssearch_dotmatchall: 0
 autocomplete: 1
 outputb_show_all_output: 0

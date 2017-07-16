@@ -14,6 +14,8 @@ def browse_options(request):
 #    forms = data3()
     data_aliases = {'occupations' : characteroptions['occupations'],
                     'abilities' : characteroptions['abilities'],
+                    'I_abilities' : characteroptions['abilities'].filter(major_type='I'),
+                    'G_abilities' : characteroptions['abilities'].filter(major_type='G'),
                     'drives' : characteroptions['drives'],
                     'recommended_occupations' : foreign_key_tables['occupation2abilities'],
                     'birth_form' : CharBirthForm(),

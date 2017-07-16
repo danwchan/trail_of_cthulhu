@@ -80,19 +80,22 @@ function myAccordian(id) {
     }
 }
 
-//used to toggle right side column "sidebar" which 
+//used to toggle right side column "sidebar" which hides the button and halves the main content
 function toggleSidecol() {
   document.getElementById("main").classList.toggle("w3-half");
   document.getElementById("sidebar").classList.toggle("w3-half");
   document.getElementById("sidebar").classList.toggle("w3-show");
   document.getElementById("floatbtn").classList.toggle("w3-hide");
-}
-
+//since there are many listitem we have to toggle with class rather than id 
+  var el = document.getElementsByClassName("listitem");
+  for (var i=0; i<el.length; ++i) {
+   el[i].classList.toggle("w3-half");
+  };}
 //used to toggle the details popup
 function popON(id) {
-	document.getElementById(id).style.display='block'
+	document.getElementById(id).style.display='block';
 }
 
 function popOFF(id) {
-	document.getElementById(id).style.display='none'
+	document.getElementById(id).style.display='none';
 }

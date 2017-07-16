@@ -74,7 +74,9 @@ class AbilityList(RevisionStatus):
     )
     major_type = models.CharField(
         max_length = 1,
-        choices = MAJOR_TYPE_CHOICES
+        choices = MAJOR_TYPE_CHOICES,
+        blank = True,
+        null = True,
     )
     INVESTIGATIVE_TYPE_CHOICES = (
         ('A', 'Academic ability'),

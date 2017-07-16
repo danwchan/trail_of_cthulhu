@@ -91,7 +91,7 @@
   
   <h2 style="margin-bottom:0;">Character Options</h2>
 
-<!-- content accordian for drives, will comment sections of function here in django with which are duplicated in later sections (occupation, abilities) -->		
+<!-- content accordion for drives, will comment sections of function here in django with which are duplicated in later sections (occupation, abilities) -->		
     <div onclick="myAccordian('drive')" class="bgimg-3 w3-btn w3-bar w3-section">
       <span class="w3-left w3-large w3-wide w3-text-light-grey">Drives</span>
       <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
@@ -105,7 +105,7 @@
       {% endcomment %}
         
       {% for drive in drives %}      
-      <div>
+      <div class="w3-half listitem">
         <a href="/JS_use.html" onclick="popON('{{ drive }}'); return false;" class="w3-wide w3-large">{{ drive }}</a>
         <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
       </div>
@@ -139,7 +139,7 @@
       </div>          
     </div>
 
-<!-- OCCUPATION CONTENT -->
+<!-- OCCUPATION CONTENT ACCORDION -->
   <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">
     <span class="w3-left w3-large w3-wide w3-text-light-grey">Occupations</span>
     <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
@@ -148,7 +148,7 @@
   <div id="occupation" class="w3-hide w3-container">    
     
     {% for occupation in occupations %}      
-      <div>
+      <div class="w3-half listitem">
         <a href="/JS_use.html" onclick="popON('{{ occupation }}'); return false;" class="w3-wide w3-large">{{ occupation }}</a>
         <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
       </div>
@@ -182,27 +182,64 @@
       </div>
   </div>
 
-<!-- ABILITY CONTENT -->
+<!-- ABILITY CONTENT ACCORDION -->
   <div onclick="myAccordian('ability')" class="bgimg-3 w3-btn w3-bar w3-section">
     <span class="w3-left w3-large w3-wide w3-text-light-grey">Abilities</span>
     <span class="w3-right w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
   </div>
-    
+
+<!-- INVESTIGATIVE ABILITY CONTENT -->    
   <div id="ability" class="w3-hide w3-container">
-
-  {% for ability in abilities %}      
     <div>
-      <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
-      <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
-    </div>
-
+      <div>
+        <h2>Investigative Abilities</h2>
+      </div>
+      {% for ability in I_abilities %}
+      <div class="w3-half listitem">
+        <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
     
-<!-- OCCUPATION MODAL -->
+<!-- INVESTIGATIVE ABILITY MODAL -->
       <div id="{{ ability }}" class="w3-modal w3-round-large">
         <div class="w3-modal-content w3-card-4">
           <header class="w3-container w3-dark-grey"> 
             <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
-            <h2>{{ ability }} ({{ ability.major_type }})</h2>
+            <h2>{{ ability }} ({{ ability.investigative_type }})</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ ability.description }}</p>
+            
+            <h5>Associated Occupations</h5>
+            {% for occupation in ability.associatedoccuabil_set.all %}
+            <p>{{ occupation.associated_occupations_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
+      {% endfor %}
+    </div>
+
+<!-- GENERAL ABILITY CONTENT -->     
+    <div>
+      <div>
+        <h2>General Abilities</h2>
+      </div>
+      {% for ability in G_abilities %}
+      <div class="w3-half listitem">
+        <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+    
+<!-- GENERAL ABILITY MODAL -->
+      <div id="{{ ability }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ ability }} ({{ ability.investigative_type }})</h2>
           </header>
           <div class="w3-container">
             <p>{{ ability.description }}</p>
@@ -218,7 +255,8 @@
         </div>
       </div>          
       {% endfor %}    
-
+    </div>
+    
 <!-- ABILITY COLLAPSE -->
     <div onclick="myAccordian('ability')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
       <div class="w3-tiny w3-left w3-wide">collapse Ability options</div>
