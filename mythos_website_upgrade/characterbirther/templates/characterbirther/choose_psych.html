@@ -1,0 +1,23 @@
+{% extends "./make_investigator.html" %}
+
+{% block title %}Investigator Creation: Psych{% endblock title%}
+
+{% block topnav %}
+
+<!-- Navbar -->
+<div class="w3-display-container w3-top w3-black w3-center" id="nav"> 
+    <div class="w3-left"> 
+      <a href="/" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+      <a href="/build" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-undo"></i></a>
+    </div>
+    <a href="/build" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">BROWSE</a>
+    <a href="/build/psych" class="w3-padding-16 w3-bar-item w3-button"><span class="w3-deepred w3-round-large w3-padding">PSYCH</span></a>
+    <a href="/build/occupation" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">OCCUPATION</a>
+    <a href="/build/abilities" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">ABILITIES</a>
+    <a href="/build/circle" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">CIRCLE</a>
+    <div class="w3-right"> 
+      <a href="/build/occupation" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i></a>
+    </div>
+</div>
+
+{% endblock topnav %}

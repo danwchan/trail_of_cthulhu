@@ -1,0 +1,42 @@
+<!-- OCCUPATION CONTENT ACCORDION -->
+  <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">
+    <span class="w3-left w3-large w3-wide w3-text-light-grey">Occupations</span>
+    <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+  </div>
+    
+  <div id="occupation" class="w3-hide w3-container">    
+    
+    {% for occupation in occupations %}      
+      <div class="w3-half listitem">
+        <a href="/JS_use.html" onclick="popON('{{ occupation }}'); return false;" class="w3-wide w3-large">{{ occupation }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+    
+<!-- OCCUPATION MODAL -->
+      <div id="{{ occupation }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ occupation }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ occupation }}</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ occupation.description }}</p>
+            
+            <h5>Occupational Abilities</h5>
+            {% for ability in occupation.associatedoccuabil_set.all %}
+            <p>{{ ability.occupational_abilities_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
+      {% endfor %}
+      
+<!-- OCCUPATION COLLAPSE -->
+      <div onclick="myAccordian('occupation')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
+          <div class="w3-tiny w3-left w3-wide">collapse Occupation options</div>
+          <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
+      </div>
+  </div>

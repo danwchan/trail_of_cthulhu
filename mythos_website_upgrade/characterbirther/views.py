@@ -29,6 +29,30 @@ def browse_options(request):
             form = CharBirthForm()
     return render(request, 'characterbirther/make_investigator.html', data_aliases)
 
+def TEST_browse_options(request, wizard):
+    # import in the data from other methods (why is this useful?)
+    characteroptions = data()
+    foreign_key_tables = data2()
+#    form = CharBirthForm()
+#    forms = data3()
+    data_aliases = {'occupations' : characteroptions['occupations'],
+                    'abilities' : characteroptions['abilities'],
+                    'I_abilities' : characteroptions['abilities'].filter(major_type='I'),
+                    'G_abilities' : characteroptions['abilities'].filter(major_type='G'),
+                    'drives' : characteroptions['drives'],
+                    'recommended_occupations' : foreign_key_tables['occupation2abilities'],
+                    'birth_form' : CharBirthForm(),
+                    }
+    # up next some logic to govern the post get methods 
+    if request.method == "POST":
+        form = CharBirthForm(request.POST)
+        if form.is_vaild():
+            return HttpResponseRedirect('/success/')
+        else:
+            form = CharBirthForm()
+    return render(request, 'characterbirther/choose_psych.html', data_aliases)
+
+
 def data():
     characteroptions = {'occupations' : OccupationList.objects.all(),
                         'abilities' : AbilityList.objects.all(),

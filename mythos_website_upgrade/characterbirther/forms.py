@@ -4,4 +4,4 @@ from .models import BirthForm
 class CharBirthForm(ModelForm):
     class Meta:
         model = BirthForm
-        fields = ['name', 'pronoun', 'age', 'birthplace', 'drive', 'occupation',]
+        fields = ['name', 'pronoun', 'age', 'birthplace']

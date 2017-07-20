@@ -6,18 +6,17 @@
 
 <!-- Navbar -->
 <div class="w3-display-container w3-top w3-black w3-center" id="nav"> 
-    <a href="#about" class="w3-padding-large w3-hide-small w3-bar-item w3-button">ABOUT</a>
-    <a href="#game" class="w3-padding-large w3-hide-small w3-bar-item w3-button">GAME</a>
-    <a href="#story" class="w3-padding-large w3-hide-small w3-bar-item w3-button">STORY</a>
-    <!-- the play button remains in small views -->
-    <a href="#contact" class="w3-padding-large w3-bar-item w3-button">PLAY</a>
-    <div class="w3-hide-small w3-dropdown-click">
-      <button onclick="toggleShow('dropmenu')" class="w3-padding-large w3-button">Details <i class="fa fa-caret-down"></i></button>
-      <div id="dropmenu" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
-        <a href="#game" class="w3-bar-item w3-button">GAME</a>
-        <a href="#story" class="w3-bar-item w3-button">STORY</a>
-        <a href="#" class="w3-bar-item w3-button">PARTICIPANTS</a>
-      </div>
+    <div class="w3-left"> 
+      <a href="/" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+      <a href="" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-undo"></i></a>
+    </div>
+    <a href="/build" class="w3-padding-16 w3-bar-item w3-button"><span class="w3-deepred w3-round-large w3-padding">BROWSE</span></a>
+    <a href="/build/psych" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">PSYCH</a>
+    <a href="/build/occupation" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">OCCUPATION</a>
+    <a href="/build/abilities" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">ABILITIES</a>
+    <a href="/build/circle" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">CIRCLE</a>
+    <div class="w3-right"> 
+      <a href="/build/psych" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i></a>
     </div>
 </div>
 
@@ -49,7 +48,11 @@
   
   <div class="w3-container w3-section w3-half">
   
-    <h2>Why are you?</h2>
+    <h2>What do you believe in?</h2>
+    
+    
+    
+    <h2>Who do you know?</h2>
     
     {% for field in birth_form %}
     <div class="w3-section">
@@ -91,178 +94,11 @@
   
   <h2 style="margin-bottom:0;">Character Options</h2>
 
-<!-- content accordion for drives, will comment sections of function here in django with which are duplicated in later sections (occupation, abilities) -->		
-    <div onclick="myAccordian('drive')" class="bgimg-3 w3-btn w3-bar w3-section">
-      <span class="w3-left w3-large w3-wide w3-text-light-grey">Drives</span>
-      <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
-    </div>
-    
-    <div id="drive" class="w3-hide w3-container">
-    
-      {% comment %}
-      this is the loop which looks for all the drives in the DriveList as called by 'drives'
-      each item is rendered as a link which redirects to a please turn on JS page if the on click JS can't function to bring up a modal with details on the item
-      {% endcomment %}
-        
-      {% for drive in drives %}      
-      <div class="w3-half listitem">
-        <a href="/JS_use.html" onclick="popON('{{ drive }}'); return false;" class="w3-wide w3-large">{{ drive }}</a>
-        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
-      </div>
-            
-<!-- this is the popup modal which gives details on the drive which is clicked -->
-      <div id="{{ drive }}" class="w3-modal w3-round-large">
-        <div class="w3-modal-content w3-card-4">
-          <header class="w3-container w3-dark-grey"> 
-            <span onclick="popOFF('{{ drive }}')" class="w3-button w3-display-topright">&times;</span>
-            <h2>{{ drive }}</h2>
-          </header>
-          <div class="w3-container">
-            <p>{{ drive.description }}</p>
-            
-            <h5>Recommended occupations</h5>
-            {% for occupation in drive.associatedoccudrive_set.all %}
-            <p>{{ occupation.associated_occupations_id }}</p>
-            {% endfor %}
-          </div>
-          <footer class="w3-container w3-dark-grey w3-padding">
-            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
-          </footer>
-        </div>
-      </div>          
-      {% endfor %}
-      
-<!-- this is the bar at the bottom of the list which collapses the accordian -->
-      <div onclick="myAccordian('drive')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
-          <div class="w3-tiny w3-left w3-wide">collapse Drive options</div>
-          <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
-      </div>          
-    </div>
+{% include "./drive_options.html" %}
 
-<!-- OCCUPATION CONTENT ACCORDION -->
-  <div onclick="myAccordian('occupation')" class="bgimg-3 w3-btn w3-bar w3-section">
-    <span class="w3-left w3-large w3-wide w3-text-light-grey">Occupations</span>
-    <span class="w3-right w3-large w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
-  </div>
-    
-  <div id="occupation" class="w3-hide w3-container">    
-    
-    {% for occupation in occupations %}      
-      <div class="w3-half listitem">
-        <a href="/JS_use.html" onclick="popON('{{ occupation }}'); return false;" class="w3-wide w3-large">{{ occupation }}</a>
-        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
-      </div>
-    
-<!-- OCCUPATION MODAL -->
-      <div id="{{ occupation }}" class="w3-modal w3-round-large">
-        <div class="w3-modal-content w3-card-4">
-          <header class="w3-container w3-dark-grey"> 
-            <span onclick="popOFF('{{ occupation }}')" class="w3-button w3-display-topright">&times;</span>
-            <h2>{{ occupation }}</h2>
-          </header>
-          <div class="w3-container">
-            <p>{{ occupation.description }}</p>
-            
-            <h5>Occupational Abilities</h5>
-            {% for ability in occupation.associatedoccuabil_set.all %}
-            <p>{{ ability.occupational_abilities_id }}</p>
-            {% endfor %}
-          </div>
-          <footer class="w3-container w3-dark-grey w3-padding">
-            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
-          </footer>
-        </div>
-      </div>          
-      {% endfor %}
-      
-<!-- OCCUPATION COLLAPSE -->
-      <div onclick="myAccordian('occupation')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
-          <div class="w3-tiny w3-left w3-wide">collapse Occupation options</div>
-          <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
-      </div>
-  </div>
+{% include "./occupation_options.html" %}
 
-<!-- ABILITY CONTENT ACCORDION -->
-  <div onclick="myAccordian('ability')" class="bgimg-3 w3-btn w3-bar w3-section">
-    <span class="w3-left w3-large w3-wide w3-text-light-grey">Abilities</span>
-    <span class="w3-right w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
-  </div>
-
-<!-- INVESTIGATIVE ABILITY CONTENT -->    
-  <div id="ability" class="w3-hide w3-container">
-    <div>
-      <div>
-        <h2>Investigative Abilities</h2>
-      </div>
-      {% for ability in I_abilities %}
-      <div class="w3-half listitem">
-        <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
-        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
-      </div>
-    
-<!-- INVESTIGATIVE ABILITY MODAL -->
-      <div id="{{ ability }}" class="w3-modal w3-round-large">
-        <div class="w3-modal-content w3-card-4">
-          <header class="w3-container w3-dark-grey"> 
-            <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
-            <h2>{{ ability }} ({{ ability.investigative_type }})</h2>
-          </header>
-          <div class="w3-container">
-            <p>{{ ability.description }}</p>
-            
-            <h5>Associated Occupations</h5>
-            {% for occupation in ability.associatedoccuabil_set.all %}
-            <p>{{ occupation.associated_occupations_id }}</p>
-            {% endfor %}
-          </div>
-          <footer class="w3-container w3-dark-grey w3-padding">
-            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
-          </footer>
-        </div>
-      </div>          
-      {% endfor %}
-    </div>
-
-<!-- GENERAL ABILITY CONTENT -->     
-    <div>
-      <div>
-        <h2>General Abilities</h2>
-      </div>
-      {% for ability in G_abilities %}
-      <div class="w3-half listitem">
-        <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
-        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
-      </div>
-    
-<!-- GENERAL ABILITY MODAL -->
-      <div id="{{ ability }}" class="w3-modal w3-round-large">
-        <div class="w3-modal-content w3-card-4">
-          <header class="w3-container w3-dark-grey"> 
-            <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
-            <h2>{{ ability }} ({{ ability.investigative_type }})</h2>
-          </header>
-          <div class="w3-container">
-            <p>{{ ability.description }}</p>
-            
-            <h5>Associated Occupations</h5>
-            {% for occupation in ability.associatedoccuabil_set.all %}
-            <p>{{ occupation.associated_occupations_id }}</p>
-            {% endfor %}
-          </div>
-          <footer class="w3-container w3-dark-grey w3-padding">
-            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
-          </footer>
-        </div>
-      </div>          
-      {% endfor %}    
-    </div>
-    
-<!-- ABILITY COLLAPSE -->
-    <div onclick="myAccordian('ability')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
-      <div class="w3-tiny w3-left w3-wide">collapse Ability options</div>
-      <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
-    </div>
-  </div>
+{% include "./ability_options.html" %}
 	
     <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
 

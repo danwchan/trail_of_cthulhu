@@ -8,7 +8,8 @@ from . import views
 
 urlpatterns = [  
     url(r'^$', TemplateView.as_view(template_name='characterbirther/main.html')),
-    url(r'build$', views.browse_options, name='make_investigator'),
+    url(r'^build$', views.browse_options, name='make_investigator'),
+    url(r'^build/(?P<wizard>[a-z]{5,10})$', views.TEST_browse_options, name='build_forms'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

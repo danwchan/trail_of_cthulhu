@@ -1,0 +1,81 @@
+<!-- ABILITY CONTENT ACCORDION -->
+  <div onclick="myAccordian('ability')" class="bgimg-3 w3-btn w3-bar w3-section">
+    <span class="w3-left w3-large w3-wide w3-text-light-grey">Abilities</span>
+    <span class="w3-right w3-text-light-grey"><i class="fa fa-caret-down"></i></span>
+  </div>
+
+<!-- INVESTIGATIVE ABILITY CONTENT -->    
+  <div id="ability" class="w3-hide w3-container">
+    <div>
+      <div>
+        <h2>Investigative Abilities</h2>
+      </div>
+      {% for ability in I_abilities %}
+      <div class="w3-half listitem">
+        <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+    
+<!-- INVESTIGATIVE ABILITY MODAL -->
+      <div id="{{ ability }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ ability }} ({{ ability.investigative_type }})</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ ability.description }}</p>
+            
+            <h5>Associated Occupations</h5>
+            {% for occupation in ability.associatedoccuabil_set.all %}
+            <p>{{ occupation.associated_occupations_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
+      {% endfor %}
+    </div>
+
+<!-- GENERAL ABILITY CONTENT -->     
+    <div>
+      <div>
+        <h2>General Abilities</h2>
+      </div>
+      {% for ability in G_abilities %}
+      <div class="w3-half listitem">
+        <a href="/JS_use.html" onclick="popON('{{ ability }}'); return false;" class="w3-wide w3-large">{{ ability }}</a>
+        <span class="w3-button w3-circle w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+    
+<!-- GENERAL ABILITY MODAL -->
+      <div id="{{ ability }}" class="w3-modal w3-round-large">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-dark-grey"> 
+            <span onclick="popOFF('{{ ability }}')" class="w3-button w3-display-topright">&times;</span>
+            <h2>{{ ability }} ({{ ability.investigative_type }})</h2>
+          </header>
+          <div class="w3-container">
+            <p>{{ ability.description }}</p>
+            
+            <h5>Associated Occupations</h5>
+            {% for occupation in ability.associatedoccuabil_set.all %}
+            <p>{{ occupation.associated_occupations_id }}</p>
+            {% endfor %}
+          </div>
+          <footer class="w3-container w3-dark-grey w3-padding">
+            <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>
+          </footer>
+        </div>
+      </div>          
+      {% endfor %}    
+    </div>
+    
+<!-- ABILITY COLLAPSE -->
+    <div onclick="myAccordian('ability')" class="w3-container w3-dark-grey w3-bar w3-button w3-ripple">
+      <div class="w3-tiny w3-left w3-wide">collapse Ability options</div>
+      <div class="w3-small w3-right"><i class="fa fa-caret-up"></i></div>
+    </div>
+  </div>

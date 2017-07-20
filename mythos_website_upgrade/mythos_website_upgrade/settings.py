@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'randomslugfield',
+    'formtools',
     'birthcharacter',
     'characterbirther',
     'debug_toolbar',
