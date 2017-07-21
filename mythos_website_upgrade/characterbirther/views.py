@@ -4,22 +4,17 @@ from django.views.generic import DetailView, ListView
 from birthcharacter.models import OccupationList, AbilityList, DriveList, AssociatedOccuAbil, AssociatedOccuDrive
 from characterbirther.forms import CharBirthForm
 
-# Create your views here.
+#global variable with the main database tables required for the charcter builder views
+DATA_ALIASES = {'occupations' : OccupationList.objects.all(),
+                'abilities' : AbilityList.objects.all(),
+                'I_abilities' : AbilityList.objects.filter(major_type='I'),
+                'G_abilities' : AbilityList.objects.filter(major_type='G'),
+                'drives' : DriveList.objects.all(),
+                'recommended_occupations' : AssociatedOccuAbil.objects.all(),
+                'birth_form' : CharBirthForm(),
+                }
 
 def browse_options(request):
-    # import in the data from other methods (why is this useful?)
-    characteroptions = data()
-    foreign_key_tables = data2()
-#    form = CharBirthForm()
-#    forms = data3()
-    data_aliases = {'occupations' : characteroptions['occupations'],
-                    'abilities' : characteroptions['abilities'],
-                    'I_abilities' : characteroptions['abilities'].filter(major_type='I'),
-                    'G_abilities' : characteroptions['abilities'].filter(major_type='G'),
-                    'drives' : characteroptions['drives'],
-                    'recommended_occupations' : foreign_key_tables['occupation2abilities'],
-                    'birth_form' : CharBirthForm(),
-                    }
     # up next some logic to govern the post get methods 
     if request.method == "POST":
         form = CharBirthForm(request.POST)
@@ -27,22 +22,9 @@ def browse_options(request):
             return HttpResponseRedirect('/success/')
         else:
             form = CharBirthForm()
-    return render(request, 'characterbirther/make_investigator.html', data_aliases)
+    return render(request, 'characterbirther/make_investigator.html', DATA_ALIASES)
 
-def TEST_browse_options(request, wizard):
-    # import in the data from other methods (why is this useful?)
-    characteroptions = data()
-    foreign_key_tables = data2()
-#    form = CharBirthForm()
-#    forms = data3()
-    data_aliases = {'occupations' : characteroptions['occupations'],
-                    'abilities' : characteroptions['abilities'],
-                    'I_abilities' : characteroptions['abilities'].filter(major_type='I'),
-                    'G_abilities' : characteroptions['abilities'].filter(major_type='G'),
-                    'drives' : characteroptions['drives'],
-                    'recommended_occupations' : foreign_key_tables['occupation2abilities'],
-                    'birth_form' : CharBirthForm(),
-                    }
+def build_wizard(request, step):
     # up next some logic to govern the post get methods 
     if request.method == "POST":
         form = CharBirthForm(request.POST)
@@ -50,29 +32,8 @@ def TEST_browse_options(request, wizard):
             return HttpResponseRedirect('/success/')
         else:
             form = CharBirthForm()
-    return render(request, 'characterbirther/choose_psych.html', data_aliases)
+    return render(request, 'characterbirther/choose_psych.html', DATA_ALIASES)
 
-
-def data():
-    characteroptions = {'occupations' : OccupationList.objects.all(),
-                        'abilities' : AbilityList.objects.all(),
-                        'drives' : DriveList.objects.all(),
-                        }
-    return characteroptions
-
-def data2():
-    foreign_key_tables = {'drive2occupation' : AssociatedOccuDrive.objects.all(),
-                          'occupation2abilities' : AssociatedOccuAbil.objects.all(),
-                          }
-    return foreign_key_tables
-
-#def data3():
-#    forms = {'birth_form' : CharBirthForm(),
-#             }
-#    return forms
-
-#for the python debug toolbar
-    
 '''
 some general view templates that are over your head at the moment
 
