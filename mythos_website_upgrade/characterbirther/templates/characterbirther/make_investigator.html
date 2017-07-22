@@ -12,13 +12,13 @@
 <div class="w3-display-container w3-top w3-black w3-center" id="nav"> 
     <div class="w3-left"> 
       <a href="/" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-home"></i></a>
-      <a href="" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-undo"></i></a>
     </div>
-    <a href="/build/drive" class="w3-padding-16 w3-bar-item w3-button">DRIVE</a>
+    <a href="/build/drive" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">DRIVE</a>
     <a href="/build/pillars" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">PILLARS</a>
     <a href="/build/occupation" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">OCCUPATION</a>
     <a href="/build/abilities" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">ABILITIES</a>
     <a href="/build/circle" class="w3-hide-small w3-padding-16 w3-bar-item w3-button">CIRCLE</a>
+    <a href="#make" class="w3-hide-medium w3-hide-large w3-padding-16 w3-bar-item w3-button">CREATE CHARACTER</a>
     <div class="w3-right"> 
       <a href="/build/drive" class="w3-padding-16 w3-bar-item w3-button"><i class="fa fa-angle-double-right"></i></a>
     </div>
@@ -62,18 +62,27 @@
       </div>
     {% endfor %}
     {% endif %}
+    
+    <div class="w3-section" id="make">
+      <input type="submit" class="w3-button w3-black w3-ripple" value="{% block submit %}Birth Investigator{% endblock submit %}">
+    </div>
+  
   </div>
   
   <div class="w3-container w3-section w3-half">
   
   {% block subformbox1 %}
-    <h2>What do you believe in?</h2>
+    <div class="w3-dark-grey w3-display-container w3-card">
+      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-black w3-large w3-display-topright">&times;</span>
+      <header class="w3-container w3-black">
+        <h4>Tip box</h4>
+      </header>
+      <div class="w3-container">      
+        <p>Welcome to the character creation app. Here you can create a character for a Meaningful Acts campaign. Browse the character options for ideas or just jump in an create a character. These tip boxes will help you along the way.</p>
+      </div>
+    </div>
   {% endblock subformbox1 %}    
   
-  </div>
-  
-  <div class="w3-container w3-section">
-    <input type="submit" class="w3-button w3-black w3-ripple" value="{% block submit %}Birth Investigator{% endblock submit %}">
   </div>
 
 </div>
@@ -84,8 +93,16 @@
 <!-- div wrapper for the main and sidebar -->
 <div class="w3-display-container w3-row">
   
+<!-- this is the button to access the character 'cart' on small screens-->
+  <div class="w3-display-right overlay w3-hide-medium w3-hide-large">
+    <button class="w3-button w3-ripple w3-black w3-small w3-round-large w3-opacity" onclick="toggleSidecol()" id="floatbtn">
+      build <br>
+      <i class="fa fa-user" aria-hidden="true"></i> <br>
+      cart
+    </button>
+  </div>
 <!-- this is the button to access the character 'cart'-->
-  <div class="w3-display-right overlay">
+  <div class="w3-display-right overlay w3-hide-small">
     <button class="w3-button w3-ripple w3-black w3-large w3-round-xxlarge w3-padding-32 w3-opacity" onclick="toggleSidecol()" id="floatbtn">
       build <br>
       <i class="fa fa-user" aria-hidden="true"></i> <br>
@@ -94,7 +111,7 @@
   </div>
 
 <!-- this is the character 'cart' -->
-  <div class="w3-display-right w3-bar-block w3-grey w3-card-2 w3-mobile w3-animate-right w3-hide overlay" id="sidebar">
+  <div class="w3-display-right w3-bar-block w3-grey w3-card-4 w3-mobile w3-animate-right w3-hide overlay" id="sidebar">
     <button class="w3-bar-item w3-button w3-large" onclick="toggleSidecol()">Close &times;</button>
     <a class="w3-bar-item w3-button" href="#">Link 1</a>
     <a class="w3-bar-item w3-button" href="#">Link 2</a>

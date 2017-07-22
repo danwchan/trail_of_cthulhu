@@ -1,8 +1,10 @@
 c2e.convert_special: 0
 e2c.convert_num: 0
 openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html:594:0:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:2070:1042:0:
-openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/choose_occupations.html:568:18:1:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html:3533:2065:1:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/choose_psych.html:0:0:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css:802:0:0:
+openfiles: /home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/drive_options.html:1548:0:0:
 snr_recursion_level: 5
 convertcolumn_horizontally: 0
 adv_open_matchname: 0
@@ -46,8 +48,13 @@ recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_web
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/make_investigator.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/base.html
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/scripts.js
-recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css
 recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/cart_sidebar.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/choose_abilities.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/choose_occupations.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/choose_pillars.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/choose_psych.html
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/custom_mods.css
+recent_files: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther/drive_options.html
 snr_replacetype: 0
 savedir: file:///home/danwchan/ongoing_projects/trail_of_cthulhu/mythos_website_upgrade/characterbirther/templates/characterbirther
 spell_check_default: 1
