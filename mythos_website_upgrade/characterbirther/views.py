@@ -1,10 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.views.generic import DetailView, ListView
 
-from birthcharacter.models import OccupationList, AbilityList, DriveList, AssociatedOccuAbil, AssociatedOccuDrive
-from characterbirther.forms import CharBirthForm
+from formtools.wizard.views import NamedUrlSessionWizardView
 
-#global variable with the main database tables required for the charcter builder views
+from birthcharacter.models import OccupationList, AbilityList, DriveList, AssociatedOccuAbil, AssociatedOccuDrive
+from characterbirther.forms import CharBirthForm, DriveForm, PillarsOfSanity, OccupationForm, Abilities, SourcesOfStability
+
 DATA_ALIASES = {'occupations' : OccupationList.objects.all(),
                 'abilities' : AbilityList.objects.all(),
                 'I_abilities' : AbilityList.objects.filter(major_type='I'),
@@ -14,25 +16,40 @@ DATA_ALIASES = {'occupations' : OccupationList.objects.all(),
                 'birth_form' : CharBirthForm(),
                 }
 
+TEMPLATES =  {'' : 'characterbirther/make_investigator.html',
+              'drive' : 'characterbirther/choose_psych.html',
+              'pillars' : 'characterbirther/choose_pillars.html',
+              'occupation' : 'characterbirther/choose_occupations.html',
+              'abilities' : 'characterbirther/choose_abilities.html',
+              'circle' : 'characterbirther/choose_circle.html',
+              }
+
+NAMED_FORM_LIST = [("", CharBirthForm),
+                   ("drive", DriveForm),
+                   ("pillars", PillarsOfSanity),
+                   ("occupation", OccupationForm),
+                   ("abilities", Abilities),
+                   ("circle", SourcesOfStability),
+                   ]
+
 def browse_options(request):
     # up next some logic to govern the post get methods 
     if request.method == "POST":
         form = CharBirthForm(request.POST)
         if form.is_vaild():
-            return HttpResponseRedirect('/success/')
+            return HttpResponseRedirect('/psych/')
         else:
             form = CharBirthForm()
     return render(request, 'characterbirther/make_investigator.html', DATA_ALIASES)
 
-def build_wizard(request, step):
-    # up next some logic to govern the post get methods 
-    if request.method == "POST":
-        form = CharBirthForm(request.POST)
-        if form.is_vaild():
-            return HttpResponseRedirect('/success/')
-        else:
-            form = CharBirthForm()
-    return render(request, 'characterbirther/choose_psych.html', DATA_ALIASES)
+class BuildWizard(NamedUrlSessionWizardView):
+    form_list = NAMED_FORM_LIST
+    
+    def get_template_names(self):
+        return [TEMPLATES[self.steps.current]]
+    
+    def done(self, NAMED_FORM_LIST, **kwargs):
+        return HttpResponseRedirect('/build/{}'.format(self.steps.next))
 
 '''
 some general view templates that are over your head at the moment

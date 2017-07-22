@@ -6,10 +6,12 @@ from django.conf import settings
 
 from . import views
 
+from .views import BuildWizard
+
 urlpatterns = [  
     url(r'^$', TemplateView.as_view(template_name='characterbirther/main.html')),
-    url(r'^build$', views.browse_options, name='make_investigator'),
-    url(r'^build/(?P<step>[a-z]{5,10})$', views.build_wizard, name='build_forms'),
+#    url(r'^build$', views.browse_options, name='make_investigator'),
+    url(r'^build/(?P<step>[a-z]{0,10})$', BuildWizard.as_view(url_name='build_step', done_step_name='finished'), name='build_step'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
