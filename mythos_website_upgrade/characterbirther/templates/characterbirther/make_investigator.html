@@ -46,7 +46,12 @@
     {{ wizard.management_form }}
     {% if wizard.form.forms %}
       {% for form in wizard.form.forms %}
-        {{ form }}
+        {% for field in form %}
+          <div class="w3-section">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+          </div>
+        {% endfor %}
       {% endfor %}
       
     {% else %}
