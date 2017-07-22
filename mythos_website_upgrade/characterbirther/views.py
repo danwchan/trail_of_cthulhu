@@ -45,6 +45,11 @@ def browse_options(request):
 class BuildWizard(NamedUrlSessionWizardView):
     form_list = NAMED_FORM_LIST
     
+    def get_context_data(self, form, **kwargs):
+        context = super(BuildWizard, self).get_context_data(form=form, **kwargs)
+        context.update(DATA_ALIASES)
+        return context
+    
     def get_template_names(self):
         return [TEMPLATES[self.steps.current]]
     
