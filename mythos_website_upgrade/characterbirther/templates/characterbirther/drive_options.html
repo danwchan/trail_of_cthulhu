@@ -5,7 +5,8 @@
     </div>
     
     <div id="drive" class="w3-hide w3-container">
-    
+
+      
       {% comment %}
       this is the loop which looks for all the drives in the DriveList as called by 'drives'
       each item is rendered as a link which redirects to a please turn on JS page if the on click JS can't function to bring up a modal with details on the item
@@ -26,11 +27,6 @@
           </header>
           <div class="w3-container">
             <p>{{ drive.description }}</p>
-            
-            <h5>Recommended occupations</h5>
-            {% for occupation in drive.associatedoccudrive_set.all %}
-            <p>{{ occupation.associated_occupations_id }}</p>
-            {% endfor %}
           </div>
           <footer class="w3-container w3-dark-grey w3-padding">
             <span class="w3-button w3-round w3-ripple"><i class="fa fa-plus" aria-hidden="true"></i>Add this drive to character cart</span>

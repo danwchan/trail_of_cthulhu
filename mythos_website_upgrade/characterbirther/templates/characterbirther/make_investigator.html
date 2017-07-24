@@ -30,7 +30,7 @@
 
 <!-- title of the page -->
 <div class="w3-container w3-row" style="padding-top: 32px">
-  <h1 class="w3-center w3-xxxlarge">Character creation app<span class="blink">_</span></h1>
+  <h1 class="w3-center w3-xxxlarge w3-hide-small">Character creation app<span class="blink">_</span></h1>
 </div>
 
 {% block formbox %}
@@ -45,7 +45,9 @@
     <h2>{% block formboxheader %}Who will you be?{% endblock formboxheader %}</h2>
     {{ wizard.management_form }}
     {% if wizard.form.forms %}
+      {{ wizard.form.management_form }}
       {% for form in wizard.form.forms %}
+        {{ wizard.form.forms.management_form }}
         {% for field in form %}
           <div class="w3-section">
             {{ field.errors }}
@@ -62,10 +64,6 @@
       </div>
     {% endfor %}
     {% endif %}
-    
-    <div class="w3-section" id="make">
-      <input type="submit" class="w3-button w3-black w3-ripple" value="{% block submit %}Birth Investigator{% endblock submit %}">
-    </div>
   
   </div>
   
@@ -83,6 +81,10 @@
     </div>
   {% endblock subformbox1 %}    
   
+  </div>
+
+  <div class="w3-container w3-section" id="make">
+    <input type="submit" class="w3-button w3-black w3-ripple" value="{% block submit %}Birth Investigator{% endblock submit %}">
   </div>
 
 </div>
@@ -119,16 +121,22 @@
   </div>
 
   <div class="w3-container" id="main">
+
+{% block mainbox %}
   
   <h2 style="margin-bottom:0;">Character Options</h2>
 
-{% include "./drive_options.html" %}
+  {% include "./drive_options.html" %}
 
-{% include "./occupation_options.html" %}
+  {% include "./occupation_options.html" %}
 
-{% include "./ability_options.html" %}
-	
+  {% include "./ability_options.html" %}
+
+{% endblock mainbox %}
+
+{% block lastbox %}	
     <p>Remember you can always <a href="http://www.mythos-acts.ca/#contact">contact</a> me by email directly or to set up a quick phone call/IRL session to go over the process of character creation. I might be able to save you time by pointing you to relevant skills given a verbal description of your character concept. The goal of this game is to explore your <a href="https://youtu.be/YfY1lfFu8j8?t=45s">character</a> (known in-game as an Investigator) and the <a href="https://youtu.be/_ccxVZXRZS8?t=10s">environment</a> in a space where you have the freedom to be as unashamedly cautious or reckless as you can conceive. We will build this story together.</p>
+{% endblock lastbox %}
 
   </div>
 

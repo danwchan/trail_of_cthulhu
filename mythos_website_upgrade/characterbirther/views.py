@@ -2,20 +2,23 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import DetailView, ListView
 
-from formtools.wizard.views import NamedUrlSessionWizardView
+#gotta import the ManagementForm to be able to redefine the get_context_data for the wiazard view
+from formtools.wizard.views import NamedUrlSessionWizardView, ManagementForm
 
+#models and forms used in this view
 from birthcharacter.models import OccupationList, AbilityList, DriveList, AssociatedOccuAbil, AssociatedOccuDrive
 from characterbirther.forms import CharBirthForm, DriveForm, PillarsOfSanity, OccupationForm, Abilities, SourcesOfStability
 
-DATA_ALIASES = {'occupations' : OccupationList.objects.all(),
-                'abilities' : AbilityList.objects.all(),
-                'I_abilities' : AbilityList.objects.filter(major_type='I'),
-                'G_abilities' : AbilityList.objects.filter(major_type='G'),
-                'drives' : DriveList.objects.all(),
+#for passing character options data from the models
+DATA_ALIASES = {'occupations' : OccupationList.objects.all().order_by('occupation'),
+                'abilities' : AbilityList.objects.all().order_by('ability'),
+                'I_abilities' : AbilityList.objects.filter(major_type='I').order_by('ability'),
+                'G_abilities' : AbilityList.objects.filter(major_type='G').order_by('ability'),
+                'drives' : DriveList.objects.all().order_by('drive'),
                 'recommended_occupations' : AssociatedOccuAbil.objects.all(),
-                'birth_form' : CharBirthForm(),
                 }
 
+#for rendering each wizard from in a different template
 TEMPLATES =  {'' : 'characterbirther/make_investigator.html',
               'drive' : 'characterbirther/choose_psych.html',
               'pillars' : 'characterbirther/choose_pillars.html',
@@ -24,6 +27,7 @@ TEMPLATES =  {'' : 'characterbirther/make_investigator.html',
               'circle' : 'characterbirther/choose_circle.html',
               }
 
+#the progression for the wizard
 NAMED_FORM_LIST = [("", CharBirthForm),
                    ("drive", DriveForm),
                    ("pillars", PillarsOfSanity),
@@ -47,6 +51,15 @@ class BuildWizard(NamedUrlSessionWizardView):
     
     def get_context_data(self, form, **kwargs):
         context = super(BuildWizard, self).get_context_data(form=form, **kwargs)
+        context.update(self.storage.extra_data)
+        context['wizard'] = {
+            'form': form,
+            'steps': self.steps,
+            'management_form': ManagementForm(prefix=self.prefix, initial={
+                'current_step': self.steps.current,
+            }),
+        }
+        #added the next line to pass chracter option contexts
         context.update(DATA_ALIASES)
         return context
     
@@ -55,6 +68,7 @@ class BuildWizard(NamedUrlSessionWizardView):
     
     def done(self, NAMED_FORM_LIST, **kwargs):
         return HttpResponseRedirect('/build/{}'.format(self.steps.next))
+
 
 '''
 some general view templates that are over your head at the moment
