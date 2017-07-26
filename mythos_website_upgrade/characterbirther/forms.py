@@ -17,7 +17,16 @@ class SanityForm(ModelForm):
         fields = ['pillar', 'description']
         
 #formset for pillars of sanity
-PillarsOfSanity = formset_factory(SanityForm, max_num=3, can_delete=True)
+PillarsOfSanity = formset_factory(
+    SanityForm, 
+    min_num=1, 
+    max_num=3, 
+    can_delete=True, 
+    validate_min=True, 
+    validate_max=True
+    )
+#debug
+import pdb, pprint; pdb.set_trace()
 
 class OccupationForm(ModelForm):
     class Meta:

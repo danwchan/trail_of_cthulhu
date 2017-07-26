@@ -19,16 +19,17 @@ DATA_ALIASES = {'occupations' : OccupationList.objects.all().order_by('occupatio
                 }
 
 #for rendering each wizard from in a different template
-TEMPLATES =  {'' : 'characterbirther/make_investigator.html',
+TEMPLATES =  {'start' : 'characterbirther/make_investigator.html',
               'drive' : 'characterbirther/choose_psych.html',
               'pillars' : 'characterbirther/choose_pillars.html',
               'occupation' : 'characterbirther/choose_occupations.html',
               'abilities' : 'characterbirther/choose_abilities.html',
               'circle' : 'characterbirther/choose_circle.html',
-              }
+#              'confirm' : 'characterbirther/character_confirm.html'
+                }
 
 #the progression for the wizard
-NAMED_FORM_LIST = [("", CharBirthForm),
+NAMED_FORM_LIST = [("start", CharBirthForm),
                    ("drive", DriveForm),
                    ("pillars", PillarsOfSanity),
                    ("occupation", OccupationForm),
@@ -67,7 +68,8 @@ class BuildWizard(NamedUrlSessionWizardView):
         return [TEMPLATES[self.steps.current]]
     
     def done(self, NAMED_FORM_LIST, **kwargs):
-        return HttpResponseRedirect('/build/{}'.format(self.steps.next))
+        return HttpResponseRedirect('/build/{}'.format('character_confirm'))
+#        return HttpResponseRedirect('/build/{}'.format(self.steps.next))
 
 
 '''
