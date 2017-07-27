@@ -21,3 +21,30 @@
 </div>
 
 {% endblock topnav %}
+
+{% block formbox %}
+
+<form class="w3-container" method="post">
+  {% csrf_token %}
+<div class="w3-light-grey w3-border w3-display-container">   
+
+  <h2>{{ form.name }}</h2>
+
+  {% for field in form %}
+    <div class="w3-section">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
+    </div>
+  {% endfor %}
+
+  <h2>Two</h2>
+
+  {% for ability in form.innateability_set.all %}
+    <div class="w3-section">
+      {{ ability.ability_id }}
+    </div>
+  {% endfor %}
+
+</div>
+
+{% endblock formbox %}

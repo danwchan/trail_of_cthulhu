@@ -25,8 +25,6 @@ PillarsOfSanity = formset_factory(
     validate_min=True, 
     validate_max=True
     )
-#debug
-import pdb, pprint; pdb.set_trace()
 
 class OccupationForm(ModelForm):
     class Meta:

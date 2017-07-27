@@ -39,13 +39,13 @@ NAMED_FORM_LIST = [("start", CharBirthForm),
 
 def browse_options(request):
     # up next some logic to govern the post get methods 
-    if request.method == "POST":
-        form = CharBirthForm(request.POST)
-        if form.is_vaild():
-            return HttpResponseRedirect('/psych/')
-        else:
-            form = CharBirthForm()
-    return render(request, 'characterbirther/make_investigator.html', DATA_ALIASES)
+#    if request.method == "POST":
+#        form = CharBirthForm(request.POST)
+#        if form.is_vaild():
+#            return HttpResponseRedirect('/psych/')
+#        else:
+    form = CharBirthForm()
+    return render(request,'characterbirther/make_investigator.html', DATA_ALIASES)
 
 class BuildWizard(NamedUrlSessionWizardView):
     form_list = NAMED_FORM_LIST
@@ -60,17 +60,29 @@ class BuildWizard(NamedUrlSessionWizardView):
                 'current_step': self.steps.current,
             }),
         }
-        #added the next line to pass chracter option contexts
-        context.update(DATA_ALIASES)
-        return context
+        #pass character option contexts only when needed, in the future make this more specific
+        if context['step'] == 'pillars':
+            return context
+        elif context['step'] == 'circle':
+            return context
+        else:
+            context.update(DATA_ALIASES)
+            return context
     
     def get_template_names(self):
         return [TEMPLATES[self.steps.current]]
     
     def done(self, NAMED_FORM_LIST, **kwargs):
-        return HttpResponseRedirect('/build/{}'.format('character_confirm'))
+#debug
+        import pdb, pprint; pdb.set_trace()
+
+        return HttpResponseRedirect(self.request, '/character/{}'.format(CharBirthForm(self.request.POST).data['birthcode']))
 #        return HttpResponseRedirect('/build/{}'.format(self.steps.next))
 
+#the finished character view displays all the characters choices for a final one page editing
+def finished_character(request):
+    form = CharBirthForm(request.POST)
+    return render(request, 'characterbirther/make_investigator.html', {'abilities' : Abilities})
 
 '''
 some general view templates that are over your head at the moment
