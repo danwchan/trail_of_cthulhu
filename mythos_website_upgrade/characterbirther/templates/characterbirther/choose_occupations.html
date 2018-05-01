@@ -21,3 +21,14 @@
 </div>
 
 {% endblock topnav %}
+
+{% block display_fields %}
+  {% if field.name in display_occupation%}
+    <div class="w3-section">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
+    </div>
+  {% else %}
+    <div class="w3-section">DEBUG</div>
+  {% endif %}
+{% endblock display_fields %}

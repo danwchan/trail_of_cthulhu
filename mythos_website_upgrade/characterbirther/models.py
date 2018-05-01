@@ -36,12 +36,14 @@ class BirthForm(models.Model):
         max_length = 1,
         choices = PRONOUN_CHOICES,
         )
-    confirm_drive = models.BooleanField('drive selection completed')
-    confirm_occupation = models.BooleanField('occupation selection completed')
-    confirm_pillars = models.BooleanField('pillars of sanity selection completed')
-    confirm_sources = models.BooleanField('sources of sanity selection completed')
-    confirm_background = models.BooleanField('character background completed')
-    
+    confirm_start = models.BooleanField('investigator created', default = False)
+    confirm_drive = models.BooleanField('drive selection completed', default = False)
+    confirm_occupation = models.BooleanField('occupation selection completed', default = False)
+    confirm_pillars = models.BooleanField('pillars of sanity selection completed', default = False)
+    confirm_sources = models.BooleanField('sources of sanity selection completed', default = False)
+    confirm_abilities = models.BooleanField('character background completed', default = False)
+    confirm_done = models.BooleanField('birth complete', default = False)
+
 #InnateAbility model is responsible for holding the values of created players skills
 class InnateAbility(models.Model):
     character_id = models.ForeignKey(
@@ -104,7 +106,7 @@ class SanityPillars(RevisionStatus):
         'a short description of this pillar of sanity',
         blank = True
     )
-    
+
 #StabilitySources model is responsible for holdng the created players sources of stability, could this area be expanded a little to involve these as more stable NPCs?
 class StabilitySources(RevisionStatus):
     investigators = models.ForeignKey(

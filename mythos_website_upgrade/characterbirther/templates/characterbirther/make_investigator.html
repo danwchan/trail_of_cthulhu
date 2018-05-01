@@ -43,6 +43,7 @@
   <div class="w3-container w3-section w3-half">
 
     <h2>{% block formboxheader %}Who will you be?{% endblock formboxheader %}</h2>
+    
     {{ wizard.management_form }}
     {% if wizard.form.forms %}
       {{ wizard.form.management_form }}
@@ -58,11 +59,17 @@
       
     {% else %}
       {% for field in wizard.form %}
-      <div class="w3-section">
-        {{ field.errors }}
-        {{ field.label_tag }} {{ field }}
-      </div>
-    {% endfor %}
+
+        {% block display_fields %}
+
+          <div class="w3-section">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+          </div>
+
+        {% endblock display_fields %}
+
+      {% endfor %}
     {% endif %}
   
   </div>

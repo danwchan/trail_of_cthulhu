@@ -4,7 +4,7 @@ from django.db import models
 class RevisionStatus(models.Model):
     created = models.DateTimeField('the date this record was created',auto_now=True)
     updated = models.DateTimeField('the last point this record was updated',auto_now_add=True)
-    revised = models.BooleanField('revised by the Keeper')
+    revised = models.BooleanField('revised by the Keeper', default=False)
     comments = models.TextField('comments which have been associated with this record',
         blank = True)
     RATING_CHOICES = (
@@ -15,8 +15,8 @@ class RevisionStatus(models.Model):
         (5, 'might be broken')
     )
     rating = models.IntegerField('1: works well, \n 5: needs rewite',default=3)
-    purist = models.BooleanField()
-    pulp = models.BooleanField()
+    purist = models.BooleanField(default=False)
+    pulp = models.BooleanField(default=False)
     
  #   def __str__(self):
  #       return str(self.)    

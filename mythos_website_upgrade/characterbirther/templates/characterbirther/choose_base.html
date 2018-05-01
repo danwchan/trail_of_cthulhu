@@ -1,0 +1,37 @@
+{% extends "./make_investigator.html" %}
+
+{% block display_fields %}
+  {% if field.name in display_start%}
+    <div class="w3-section">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
+    </div>
+  {% else %}
+    <div class="w3-section">DEBUG</div>
+  {% endif %}
+{% endblock display_fields %}
+  
+{% block subformbox1 %}
+  <div class="w3-dark-grey w3-display-container w3-card">
+    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-black w3-large w3-display-topright">&times;</span>
+
+    <header class="w3-container w3-black">
+      <h4>Tip box</h4>
+    </header>
+
+    <div class="w3-container">
+      <p>Welcome to the character creation app. Here you can create a character for a Meaningful Acts campaign. Browse the character options for ideas or just jump in an create a character. These tip boxes will help you along the way.</p>
+    </div>
+
+  </div>
+{% endblock subformbox1 %}
+
+{% block mainbox %}
+  <h2 style="margin-bottom:0;">Character Options</h2>
+
+  {% include "./drive_options.html" %}
+
+  {% include "./occupation_options.html" %}
+
+  {% include "./ability_options.html" %}
+{% endblock mainbox %}
